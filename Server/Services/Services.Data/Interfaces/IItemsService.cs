@@ -11,8 +11,8 @@ namespace Services.Services.Data.Interfaces
 
         public Task<T> GetByIdAsync(string id);
 
-        public Task UpdateAsync(T customer);
+        public Task<T> UpdateAsync(T customer);
 
-        public Task DeleteAsync(string id);
+        public Task<T> DeleteAsync(string id);
     }
 }

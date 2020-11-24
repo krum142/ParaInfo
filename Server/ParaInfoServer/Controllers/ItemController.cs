@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parainfo.Data.Models;
@@ -19,10 +20,16 @@ namespace ParaInfoServer.Controllers
 
         [HttpGet]
         [Authorize]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var user = this.User;
-            return Ok("ItWorks");
+            return Json(await itemService.GetAllAsync());
+        }
+
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Get(Paraglider model)
+        {
+            return Json(await itemService.GetByIdAsync(model.Id));
         }
 
         [HttpPost]
@@ -34,15 +41,13 @@ namespace ParaInfoServer.Controllers
         [HttpPut]
         public async Task<IActionResult> Put(Paraglider model)
         {
-            await itemService.UpdateAsync(model);
-            return Ok();
+            return Json(await itemService.UpdateAsync(model));
         }
 
-        [HttpPost]
+        [HttpDelete]
         public async Task<IActionResult> Delete(Paraglider model)
         {
-           await itemService.DeleteAsync(model.Id.ToString());
-           return Ok();
+           return Json(await itemService.DeleteAsync(model.Id));
         }
     }
 }

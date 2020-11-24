@@ -8,7 +8,7 @@ namespace Parainfo.Data.Common.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
 
         public DateTime CreatedAt => DateTime.UtcNow;
     }

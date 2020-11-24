@@ -9,6 +9,11 @@ namespace Parainfo.Data.Models
     [BsonCollection("Paragliders")]
     public class Paraglider : BaseModel
     {
+        public Paraglider()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         public string Brand { get; set; }
 
         public string Model { get; set; }

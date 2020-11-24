@@ -31,13 +31,20 @@ namespace Services.Services.Data
             await mongoDb.InsertOneAsync(customer);
             return customer;
         }
-        public async Task UpdateAsync(T customer)
+        public async Task<T> UpdateAsync(T customer)
         {
-            await mongoDb.ReplaceOneAsync(customer);
+           return await mongoDb.ReplaceOneAsync(customer);
         }
-        public async Task DeleteAsync(string id)
+        public async Task<T> DeleteAsync(string id)
         {
-            await mongoDb.DeleteOneAsync(c => c.Id.ToString() == id);
+            var item = await mongoDb.FindByIdAsync(id);
+            if (item != null)
+            {
+                await mongoDb.DeleteOneAsync(c => c.Id == item.Id);
+                return item;
+            }
+
+            return null;
         }
 
     }

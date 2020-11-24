@@ -38,7 +38,7 @@ namespace MongoDB.Data.Repository
 
         void ReplaceOne(T document);
 
-        Task ReplaceOneAsync(T document);
+        Task<T> ReplaceOneAsync(T document);
 
         void DeleteOne(Expression<Func<T, bool>> filterExpression);
 

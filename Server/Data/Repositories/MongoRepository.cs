@@ -52,6 +52,13 @@ namespace Parainfo.Data.Repositories
             return _collection.Find(filterExpression).Project(projectionExpression).ToEnumerable();
         }
 
+        //public virtual async string GetId(T model)
+        //{
+        //    var result = await this._collection.FindAsync(x => x.Id == model.Id);
+
+        //    return await result.FirstOrDefaultAsync().Id.
+        //}
+
         public virtual T FindOne(Expression<Func<T, bool>> filterExpression)
         {
             return _collection.Find(filterExpression).FirstOrDefault();
@@ -64,8 +71,7 @@ namespace Parainfo.Data.Repositories
 
         public virtual T FindById(string id)
         {
-            var objectId = new ObjectId(id);
-            var filter = Builders<T>.Filter.Eq(doc => doc.Id, objectId);
+            var filter = Builders<T>.Filter.Eq(doc => doc.Id, id);
             return _collection.Find(filter).SingleOrDefault();
         }
 
@@ -73,8 +79,7 @@ namespace Parainfo.Data.Repositories
         {
             return Task.Run(() =>
             {
-                var objectId = new ObjectId(id);
-                var filter = Builders<T>.Filter.Eq(doc => doc.Id, objectId);
+                var filter = Builders<T>.Filter.Eq(doc => doc.Id, id);
                 return _collection.Find(filter).SingleOrDefaultAsync();
             });
         }
@@ -112,10 +117,14 @@ namespace Parainfo.Data.Repositories
             _collection.FindOneAndReplace(filter, document);
         }
 
-        public virtual async Task ReplaceOneAsync(T document)
+        public virtual async Task<T> ReplaceOneAsync(T document)
         {
-            var filter = Builders<T>.Filter.Eq(doc => doc.Id, document.Id);
-            await _collection.FindOneAndReplaceAsync(filter, document);
+            var options = new FindOneAndReplaceOptions<T>
+            {
+                ReturnDocument = ReturnDocument.After
+            };
+            var z = await _collection.FindOneAndReplaceAsync<T>(u => u.Id == document.Id, document, options);
+            return z;
         }
 
         public void DeleteOne(Expression<Func<T, bool>> filterExpression)
@@ -130,8 +139,7 @@ namespace Parainfo.Data.Repositories
 
         public void DeleteById(string id)
         {
-            var objectId = new ObjectId(id);
-            var filter = Builders<T>.Filter.Eq(doc => doc.Id, objectId);
+            var filter = Builders<T>.Filter.Eq(doc => doc.Id, id);
             _collection.FindOneAndDelete(filter);
         }
 
@@ -139,8 +147,7 @@ namespace Parainfo.Data.Repositories
         {
             return Task.Run(() =>
             {
-                var objectId = new ObjectId(id);
-                var filter = Builders<T>.Filter.Eq(doc => doc.Id, objectId);
+                var filter = Builders<T>.Filter.Eq(doc => doc.Id, id);
                 _collection.FindOneAndDeleteAsync(filter);
             });
         }
