@@ -8,7 +8,7 @@ namespace ParaInfoServer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ApiController : ControllerBase
+    public class ApiController : Controller
     {
     }
 }

@@ -6,10 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using ParaInfoServer.Configs;
-using ParaInfoServer.Models;
-using System.Text;
 using Microsoft.OpenApi.Models;
+using MongoDB.Data.Repository;
+using Parainfo.Data.Models.Identity;
+using Parainfo.Data.Repositories;
+using System.Text;
+using Parainfo.Data.Configs;
+using Services.Services.Data;
+using Services.Services.Data.Interfaces;
 
 
 namespace ParaInfoServer
@@ -30,6 +34,12 @@ namespace ParaInfoServer
         {
             var databaseConfiguration = this.Configuration.GetSection("DatabaseConfiguration");
             services.Configure<DatabaseConfiguration>(databaseConfiguration);
+
+
+            services.AddSingleton(typeof(DatabaseConfiguration));
+            services.AddScoped(typeof(IMongoRepository<>),typeof(MongoRepository<>));
+            services.AddTransient(typeof(IItemsService<>), typeof(ItemsService<>));
+
 
             services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
                 {

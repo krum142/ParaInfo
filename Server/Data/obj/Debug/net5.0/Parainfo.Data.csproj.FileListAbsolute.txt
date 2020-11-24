@@ -1,0 +1,15 @@
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.csprojAssemblyReference.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.AssemblyInfoInputs.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.AssemblyInfo.cs
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.csproj.CoreCompileInputs.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\Parainfo.Data.deps.json
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\Parainfo.Data.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\ref\Parainfo.Data.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\Parainfo.Data.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\Parainfo.Data.Common.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\bin\Debug\net5.0\Parainfo.Data.Common.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.csproj.CopyComplete
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\ref\Parainfo.Data.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Data\obj\Debug\net5.0\Parainfo.Data.pdb

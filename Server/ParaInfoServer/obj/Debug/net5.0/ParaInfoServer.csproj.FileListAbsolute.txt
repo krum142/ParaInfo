@@ -92,3 +92,10 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfoS
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ref\ParaInfoServer.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfoServer.pdb
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfoServer.genruntimeconfig.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.Data.Common.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.Data.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.Data.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.Data.Common.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Services.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Services.pdb
