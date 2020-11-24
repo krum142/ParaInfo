@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using MongoDB.Bson;
 using Parainfo.Data.Common.Models;
 using ParaInfoServer.Attributes;
 
@@ -49,7 +48,7 @@ namespace Parainfo.Data.Models
 
         public string WingLoading { get; set; }
 
-        public int? MinSpeed { get; set; }
+        public string MinSpeed { get; set; }
 
         public string TrimSpeed { get; set; }
 

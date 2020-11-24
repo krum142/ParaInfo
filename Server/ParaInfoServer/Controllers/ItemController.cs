@@ -25,11 +25,12 @@ namespace ParaInfoServer.Controllers
             return Json(await itemService.GetAllAsync());
         }
 
-        [HttpGet("{id}")]
+        
         [Authorize]
-        public async Task<IActionResult> Get(Paraglider model)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
         {
-            return Json(await itemService.GetByIdAsync(model.Id));
+            return Json(await itemService.GetByIdAsync(id));
         }
 
         [HttpPost]

@@ -18,14 +18,12 @@ namespace Services.Services.Data
         }
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            //return await mongoDb.Find(c => true).ToListAsync();
             return await mongoDb.GetAllAsync();
         }
         public async Task<T> GetByIdAsync(string id)
         {
             return await mongoDb.FindByIdAsync(id);
         }
-
         public async Task<T> CreateAsync(T customer)
         {
             await mongoDb.InsertOneAsync(customer);

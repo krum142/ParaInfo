@@ -71,7 +71,7 @@ namespace ParaInfoServer.Controllers
                 {
                     new Claim("Id", user.Id.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddDays(5),
+                Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key)
                     , SecurityAlgorithms.HmacSha256Signature)
