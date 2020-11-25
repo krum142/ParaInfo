@@ -4,14 +4,12 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
-using MongoDB.Data.Repository;
 using MongoDB.Driver;
 using Parainfo.Data.Common.Models;
 using Parainfo.Data.Configs;
 using ParaInfoServer.Attributes;
 
-namespace Parainfo.Data.Repositories
+namespace Parainfo.Data.Common.Repositories
 {
     public class MongoRepository<T> : IMongoRepository<T>
         where T : BaseModel

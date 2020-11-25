@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MongoDB.Data.Repository;
 using Parainfo.Data.Common.Models;
+using Parainfo.Data.Common.Repositories;
 using Services.Services.Data.Interfaces;
 
 

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Parainfo.Data.Common.Models;
 
-namespace MongoDB.Data.Repository
+namespace Parainfo.Data.Common.Repositories
 {
     public interface IMongoRepository<T> where T : BaseModel
     {
