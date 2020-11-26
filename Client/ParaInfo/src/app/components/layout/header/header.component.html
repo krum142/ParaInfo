@@ -1,23 +1,20 @@
 <header>
     <nav>
-        <ul class="menu" [ngClass]="{'active': showMobileMenu}"> 
+        <ul class="menu" [ngClass]="{'active': showMobileMenu}">
             <li class="logo"><a href="#">ParaInfo</a></li>
             <li class="item"><a href="#">Home</a></li>
             <li class="item"><a href="#">About</a></li>
-
-            
-            <app-submenu>
-                <li class="item has-submenu" [ngClass]="{'submenu-active': showSubmenu}" (click)="toggleSubmenu()">
-                    <a tabindex="0">Services</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="#">Design</a></li>
-                        <li class="subitem"><a href="#">Development</a></li>
-                        <li class="subitem"><a href="#">SEO</a></li>
-                        <li class="subitem"><a href="#">Copywriting</a></li>
-                    </ul>
-                </li>
-            </app-submenu>
-            <li class="item has-submenu" [ngClass]="{'submenu-active': showSecondSubmenu}" (click)="toggleSecondSubmenu()">
+            <li class="item has-submenu" [ngClass]="{'submenu-active': showSubmenu}" (click)="toggleSubmenu()">
+                <a tabindex="0">Services</a>
+                <ul class="submenu">
+                    <li class="subitem"><a href="#">Design</a></li>
+                    <li class="subitem"><a href="#">Development</a></li>
+                    <li class="subitem"><a href="#">SEO</a></li>
+                    <li class="subitem"><a href="#">Copywriting</a></li>
+                </ul>
+            </li>
+            <li class="item has-submenu" [ngClass]="{'submenu-active': showSecondSubmenu}"
+                (click)="toggleSecondSubmenu()">
                 <a tabindex="0">Plans</a>
                 <ul class="submenu">
                     <li class="subitem"><a href="#">Freelancer</a></li>
@@ -27,9 +24,10 @@
             </li>
             <li class="item"><a href="#">Contact</a>
             </li>
-            <li class="item button"><a href="#">Log In</a></li>
-            <li class="item button secondary"><a href="#">Sign Up</a></li>
-            <li class="toggle"><a href="#" (click)="toggleMobileMenu()"><i class="fas" [ngClass]="showMobileMenu ? 'fa-tiems' : 'fa-bars'"></i></a></li>
+            <li class="item button"><a [routerLink]="['/login']">Log In</a></li>
+            <li class="item button secondary"><a [routerLink]="['/register']">Register</a></li>
+            <li class="toggle"><a href="#" (click)="toggleMobileMenu()"><i class="fas"
+                        [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>
         </ul>
     </nav>
 </header>

@@ -1,4 +1,3 @@
-import { rendererTypeName } from '@angular/compiler';
 import { Component, OnInit,Renderer2 } from '@angular/core';
 
 @Component({
@@ -7,7 +6,7 @@ import { Component, OnInit,Renderer2 } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(renderer:Renderer2) { }
+  constructor() { }
 
   showSubmenu: boolean = false;
   showSecondSubmenu:boolean = false;

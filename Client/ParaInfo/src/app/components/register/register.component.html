@@ -1,0 +1,21 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h1>Register</h1>
+
+    <span *ngIf="username?.touched && username?.errors?.required" class="Error">Username is Required!</span>
+    <label for="username">Username</label>
+    <input type="text" name="username" formControlName="username">
+
+    <span *ngIf="email?.touched && email?.status === 'INVALID'" class="Error">Email is Invalid Or Missing</span>
+    <label for="email">Email</label>
+    <input type="email" name="email" formControlName="email">
+
+    <span *ngIf="password?.touched && password?.errors?.required" class="Error">Password is Required!</span>
+    <label for="password">Password</label>
+    <input type="password" name="password" formControlName="password">
+    
+    <span *ngIf="confirmPassword?.touched && password?.value !== confirmPassword?.value" class="Error">Passwords Dont Match!</span>
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" name="confirm-password" formControlName="confirm-password">
+
+    <button type="submit">Register</button>
+</form>

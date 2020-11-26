@@ -70,7 +70,7 @@ namespace ParaInfoServer
                 .AddJwtBearer(x =>
                 {
                     x.RequireHttpsMetadata = false;
-                    x.SaveToken = true;
+                    x.SaveToken = false;
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateLifetime = true,
@@ -102,6 +102,11 @@ namespace ParaInfoServer
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(opt => opt
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {
