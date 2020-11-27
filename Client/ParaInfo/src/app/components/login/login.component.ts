@@ -12,30 +12,28 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
   constructor(private fb: FormBuilder, private authService: AuthService) {
-      this.loginForm = this.fb.group({
-        'username': ['', [Validators.required]],
-        'password': ['', [Validators.required]]
-      })
-      console.log(this.loginForm)
-   }
+    this.loginForm = this.fb.group({
+      'username': ['', [Validators.required]],
+      'password': ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
   }
-  
-  login(){
-    if(this.loginForm.status === "VALID"){
-      console.log(this.loginForm.value);
-      this.authService.login(this.loginForm.value).subscribe(data =>{
-        this.authService.saveToken(data)
+
+  login() {
+    if (this.loginForm.status === "VALID") {
+      this.authService.login(this.loginForm.value).subscribe(data => {
+        this.authService.saveToken(data);
       })
     }
   }
 
-  get username(){
+  get username() {
     return this.loginForm.get('username');
   }
 
-  get password(){
+  get password() {
     return this.loginForm.get('password');
   }
 }

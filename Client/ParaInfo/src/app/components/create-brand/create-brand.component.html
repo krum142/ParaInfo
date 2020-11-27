@@ -1,0 +1,10 @@
+<form [formGroup]="createBrandForm" (ngSubmit)="createBrand()">
+    <h1>Create Brand</h1>
+    <div>
+        <label for="brand-name">Brand Name</label>
+        <input type="text" name="brand-name" formControlName="name">
+        <label for="brand-img">Brand Image Url</label>
+        <input type="text" name="brand-img" formControlName="imageUrl">
+    </div>
+    <button type="submit" >Create Brand</button>
+</form>

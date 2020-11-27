@@ -12,7 +12,6 @@ namespace Parainfo.Data.Models
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
         public string Brand { get; set; }
 
         public string Model { get; set; }
