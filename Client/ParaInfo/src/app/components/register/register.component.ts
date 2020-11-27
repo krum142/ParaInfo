@@ -25,7 +25,8 @@ export class RegisterComponent implements OnInit {
   }
   
   register(){
-    if(this.password?.value == this.confirmPassword?.value && this.registerForm.status === "VALID"){
+    if(this.password?.value == this.confirmPassword?.value &&
+       this.registerForm.status === "VALID"){
       console.log("yes");
     }
   }

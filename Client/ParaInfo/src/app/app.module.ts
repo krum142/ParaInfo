@@ -8,6 +8,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { GliderService } from './services/glider.service';
+import { CreateGliderComponent } from './components/create-glider/create-glider.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +21,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    CreateGliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    GliderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

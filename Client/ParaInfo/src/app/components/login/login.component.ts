@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
       this.loginForm = this.fb.group({
         'username': ['', [Validators.required]],
         'password': ['', [Validators.required]]
@@ -23,9 +24,11 @@ export class LoginComponent implements OnInit {
   
   login(){
     if(this.loginForm.status === "VALID"){
-      console.log("yes");
+      console.log(this.loginForm.value);
+      this.authService.login(this.loginForm.value).subscribe(data =>{
+        this.authService.saveToken(data)
+      })
     }
-    console.log(this.loginForm.get('username'));
   }
 
   get username(){

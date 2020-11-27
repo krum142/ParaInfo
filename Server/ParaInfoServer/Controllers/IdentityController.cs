@@ -80,7 +80,7 @@ namespace ParaInfoServer.Controllers
             var token = tokenHeader.CreateToken(tokenDescriptor);
             var encryptedToken = tokenHeader.WriteToken(token);
 
-            return encryptedToken;
+            return Json(encryptedToken);
         }
     }
 }
