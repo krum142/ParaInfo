@@ -1,33 +1,24 @@
 <header>
     <nav>
         <ul class="menu" [ngClass]="{'active': showMobileMenu}">
-            <li class="logo"><a href="#">ParaInfo</a></li>
-            <li class="item"><a href="#">Home</a></li>
-            <li class="item"><a href="#">About</a></li>
-            <li class="item has-submenu" [ngClass]="{'submenu-active': showSubmenu}" (click)="toggleSubmenu()">
-                <a tabindex="0">Services</a>
-                <ul class="submenu">
-                    <li class="subitem"><a href="#">Design</a></li>
-                    <li class="subitem"><a href="#">Development</a></li>
-                    <li class="subitem"><a href="#">SEO</a></li>
-                    <li class="subitem"><a href="#">Copywriting</a></li>
-                </ul>
-            </li>
-            <li class="item has-submenu" [ngClass]="{'submenu-active': showSecondSubmenu}"
-                (click)="toggleSecondSubmenu()">
-                <a tabindex="0">Plans</a>
-                <ul class="submenu">
-                    <li class="subitem"><a href="#">Freelancer</a></li>
-                    <li class="subitem"><a href="#">Startup</a></li>
-                    <li class="subitem"><a href="#">Enterprise</a></li>
-                </ul>
-            </li>
-            <li class="item"><a href="#">Contact</a>
-            </li>
-            <li class="item button"><a [routerLink]="['/login']">Log In</a></li>
-            <li class="item button secondary"><a [routerLink]="['/register']">Register</a></li>
-            <li class="toggle"><a href="#" (click)="toggleMobileMenu()"><i class="fas"
-                        [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>
+            <ng-container *ngIf="isUserLogged; then loggedInTemplate; else loggedOutTemplate"></ng-container>
         </ul>
     </nav>
 </header>
+
+<ng-template #loggedInTemplate>
+    <li class="logo"><a href="#">ParaInfo</a></li>
+    <li class="item"><a href="#">Home</a></li>
+    <li class="item"><a href="#">Welcome {{ username }}</a></li>
+    <li class="item button"><a (click)="logout()">Logout</a></li>
+    <li class="toggle"><a href="#" (click)="toggleMobileMenu()"><i class="fas" [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>
+</ng-template>
+
+<ng-template #loggedOutTemplate>
+        <li class="logo"><a href="#">ParaInfo</a></li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item button"><a [routerLink]="['/login']">Log In</a></li>
+        <li class="item button secondary"><a [routerLink]="['/register']">Register</a></li>
+        <li class="toggle"><a href="#" (click)="toggleMobileMenu()"><i class="fas" [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>
+</ng-template>

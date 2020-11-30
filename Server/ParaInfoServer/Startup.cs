@@ -37,7 +37,7 @@ namespace ParaInfoServer
 
             services.AddSingleton(typeof(DatabaseConfiguration));
             services.AddScoped(typeof(IMongoRepository<>),typeof(MongoRepository<>));
-            services.AddTransient(typeof(IItemsService<>), typeof(ItemsService<>));
+            services.AddTransient<IBrandService,BrandService>();
 
 
             services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
@@ -95,7 +95,7 @@ namespace ParaInfoServer
             {
                 app.UseSwagger();
                 app.UseDeveloperExceptionPage();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParaInfo v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParaInfo"));
             }
 
             app.UseRouting();

@@ -1,0 +1,12 @@
+<section>
+    <img src="{{brand?.imageUrl}}">
+    <h1>{{brand?.name}}</h1>
+    <div class="closable-tab" [ngClass]="{'class': true}">
+        <h3 class="details">Details</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDetails}">
+            <p>: {{brand?.description}}</p>
+        </div>
+        <a (click)="toggleDetails()"><i class="fas" [ngClass]="showDetails ? 'fa-bars' : 'fa-times'" ></i></a>
+    </div>
+</section>
+<app-brand-categories></app-brand-categories>

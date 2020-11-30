@@ -8,11 +8,18 @@ import { Brand } from '../models/Brand';
   providedIn: 'root'
 })
 export class BrandService {
-  private createPath = environment.apiUrl + 'brand'
+  private Path = environment.apiUrl + 'brand'
   constructor(private http: HttpClient) { }
 
   create(brand:any):Observable<Brand>{
-    console.log(this.createPath);
-    return this.http.post<Brand>(this.createPath,brand);
+    return this.http.post<Brand>(this.Path,brand);
+  }
+
+  getAll():Observable<Array<Brand>>{
+    return this.http.get<Array<Brand>>(this.Path);
+  }
+
+  getBrand(name: any):Observable<Brand>{
+    return this.http.get<Brand>(`${this.Path}/${name}`)
   }
 }

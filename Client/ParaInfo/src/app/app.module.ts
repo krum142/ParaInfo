@@ -16,7 +16,9 @@ import { CreateBrandComponent } from './components/create-brand/create-brand.com
 import { BrandService } from './services/brand.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
-
+import { BrandComponent } from './components/brand/brand.component';
+import { NoPageFoundComponent } from './components/no-page-found/no-page-found.component';
+import { BrandCategoriesComponent } from './components/brand-categories/brand-categories.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,15 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
     RegisterComponent,
     CreateGliderComponent,
     CreateBrandComponent,
+    BrandComponent,
+    NoPageFoundComponent,
+    BrandCategoriesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AuthService,

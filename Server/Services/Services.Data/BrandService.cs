@@ -2,38 +2,44 @@
 using System.Threading.Tasks;
 using Parainfo.Data.Common.Models;
 using Parainfo.Data.Common.Repositories;
+using Parainfo.Data.Models;
 using Services.Services.Data.Interfaces;
 
 
 namespace Services.Services.Data
 {
-    public class ItemsService<T> : IItemsService<T>
-    where T : BaseModel
+    public class BrandService: IBrandService
     {
-        private readonly IMongoRepository<T> mongoDb;
+        private readonly IMongoRepository<Brand> mongoDb;
 
-        public ItemsService(IMongoRepository<T> mongoDb)
+        public BrandService(IMongoRepository<Brand> mongoDb)
         {
             this.mongoDb = mongoDb;
         }
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<Brand>> GetAllAsync()
         {
             return await mongoDb.GetAllAsync();
         }
-        public async Task<T> GetByIdAsync(string id)
+        public async Task<Brand> GetByIdAsync(string id)
         {
             return await mongoDb.FindByIdAsync(id);
         }
-        public async Task<T> CreateAsync(T customer)
+
+        public async Task<Brand> GetByNameAsync(string name)
+        {
+            return await mongoDb.FindOneAsync(x => x.Name == name);
+        }
+
+        public async Task<Brand> CreateAsync(Brand customer)
         {
             await mongoDb.InsertOneAsync(customer);
             return customer;
         }
-        public async Task<T> UpdateAsync(T customer)
+        public async Task<Brand> UpdateAsync(Brand customer)
         {
            return await mongoDb.ReplaceOneAsync(customer);
         }
-        public async Task<T> DeleteAsync(string id)
+        public async Task<Brand> DeleteAsync(string id)
         {
             var item = await mongoDb.FindByIdAsync(id);
             if (item != null)

@@ -58,6 +58,11 @@ header .item.button {
     order: 2;
 }
 
+header .item.username{
+    display: inline;
+    font-weight: bold;
+}
+
 header .item {
     order: 3;
     width: 100%;

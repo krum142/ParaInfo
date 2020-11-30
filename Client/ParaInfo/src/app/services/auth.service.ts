@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, pipe, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -19,6 +19,13 @@ export class AuthService {
       );
   }
 
+  logout(){
+    if(this.isAuthenticated()){
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');
+    }
+  }
+
   register(data: any): Observable<any> {
     return this.http.post(this.registerPath, data)
       .pipe(
@@ -30,8 +37,23 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
-  getToken() {
+  saveUsername(username: string): void{
+    localStorage.setItem('username', username)
+  }
+
+  getToken(){
     return localStorage.getItem('token');
+  }
+
+  getUsername(){
+    return localStorage.getItem('username');
+  }
+
+  isAuthenticated(){
+    if(this.getToken()){
+      return true;
+    }
+    return false;
   }
 
   private handleError(err: HttpErrorResponse) {

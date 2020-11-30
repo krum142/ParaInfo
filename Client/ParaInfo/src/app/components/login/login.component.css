@@ -1,4 +1,4 @@
-body {
+/* body {
     background: linear-gradient(90deg, rgb(0, 189, 196) 0%, rgb(0, 180, 75) 100%);
     background-size: 400% 400%;
     animation: AnimationName 30s ease infinite;
@@ -14,7 +14,7 @@ body {
     100% {
         background-position: 0% 50%
     }
-}
+} */
 
 h1{
     padding: 5px 10px 20px 0;
