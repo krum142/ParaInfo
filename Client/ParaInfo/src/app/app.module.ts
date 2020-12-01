@@ -11,14 +11,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GliderService } from './services/glider.service';
-import { CreateGliderComponent } from './components/create-glider/create-glider.component';
-import { CreateBrandComponent } from './components/create-brand/create-brand.component';
+
 import { BrandService } from './services/brand.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
-import { BrandComponent } from './components/brand/brand.component';
+
 import { NoPageFoundComponent } from './components/no-page-found/no-page-found.component';
-import { BrandCategoriesComponent } from './components/brand-categories/brand-categories.component';
+import { CreateBrandComponent } from './components/brandComponents/create-brand/create-brand.component';
+import { BrandComponent } from './components/brandComponents/brand/brand.component';
+import { BrandCategoriesComponent } from './components/brandComponents/brand-categories/brand-categories.component';
+import { BrandProductsComponent } from './components/brandComponents/brand-products/brand-products.component';
+import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
+
 
 @NgModule({
   declarations: [
@@ -27,11 +31,12 @@ import { BrandCategoriesComponent } from './components/brand-categories/brand-ca
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    CreateGliderComponent,
+    CreateParagliderComponent,
     CreateBrandComponent,
     BrandComponent,
     NoPageFoundComponent,
     BrandCategoriesComponent,
+    BrandProductsComponent,
   ],
   imports: [
     BrowserModule,

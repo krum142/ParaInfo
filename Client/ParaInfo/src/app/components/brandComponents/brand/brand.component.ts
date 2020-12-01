@@ -9,20 +9,29 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
-  brand:any;
-  name:string;
-  showDetails:boolean = false;
-  constructor(private router: Router, private route: ActivatedRoute, private brandService: BrandService) {
-    this.name = this.route.snapshot.params.name;
+  brand: any;
+  categoryRoute: string;
+  brandName: string;
+  showDetails: boolean = true;
+
+  constructor(
+    private route: ActivatedRoute,
+    private brandService: BrandService) {
+
+    this.brandName = this.route.snapshot.params.name;
+    this.categoryRoute = this.route.snapshot.params.category;
+    if(!this.categoryRoute){
+      this.categoryRoute = "Paragliders";
+    }
   }
 
   ngOnInit(): void {
-    this.brandService.getBrand(this.name).subscribe(data => {
+    this.brandService.getBrand(this.brandName).subscribe(data => {
       this.brand = data;
     });
   }
 
-  toggleDetails(){
+  toggleDetails() {
     this.showDetails = !this.showDetails
   }
 }

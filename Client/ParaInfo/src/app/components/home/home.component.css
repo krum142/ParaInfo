@@ -4,10 +4,11 @@ section {
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 
-section.header img.cover-photo {
+img.cover-photo {
     position: absolute;
     z-index: -1;
     width: 100%;

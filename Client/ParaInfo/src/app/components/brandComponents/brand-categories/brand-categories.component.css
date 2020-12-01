@@ -1,0 +1,38 @@
+section {
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+section ul{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+section ul li{
+    padding: 20px 30px;
+    margin: 15px 0;
+    text-align: center;
+    min-width: 200px;
+}
+
+section ul li a{
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: black;
+}
+
+section ul li a:hover{
+
+    background: black;
+    color:white;
+}
+
+section ul li a.active{
+    background: black;
+    color:white;
+}

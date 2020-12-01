@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateGliderComponent } from './create-glider.component';
+import { CreateParagliderComponent } from './create-paraglider.component';
 
-describe('CreateGliderComponent', () => {
-  let component: CreateGliderComponent;
-  let fixture: ComponentFixture<CreateGliderComponent>;
+describe('CreateParagliderComponent', () => {
+  let component: CreateParagliderComponent;
+  let fixture: ComponentFixture<CreateParagliderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateGliderComponent ]
+      declarations: [ CreateParagliderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateGliderComponent);
+    fixture = TestBed.createComponent(CreateParagliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

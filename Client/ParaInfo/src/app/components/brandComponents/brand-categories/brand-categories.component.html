@@ -1,0 +1,7 @@
+<section>
+    <ul>
+        <li *ngFor="let category of categories">
+            <a (click)="changeAndReloadRoute(category)" [ngClass]="{'active': categoryRoute === category }">{{category}}</a>
+        </li>
+    </ul>
+</section>
