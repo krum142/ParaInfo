@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GliderService } from './glider.service';
+import { ParagliderService } from './paraglider.service';
 
-describe('GliderService', () => {
-  let service: GliderService;
+describe('ParagliderService', () => {
+  let service: ParagliderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GliderService);
+    service = TestBed.inject(ParagliderService);
   });
 
   it('should be created', () => {

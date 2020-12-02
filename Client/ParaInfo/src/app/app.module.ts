@@ -10,7 +10,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { GliderService } from './services/glider.service';
 
 import { BrandService } from './services/brand.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
@@ -22,6 +21,7 @@ import { BrandComponent } from './components/brandComponents/brand/brand.compone
 import { BrandCategoriesComponent } from './components/brandComponents/brand-categories/brand-categories.component';
 import { BrandProductsComponent } from './components/brandComponents/brand-products/brand-products.component';
 import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
+import { ParagliderService } from './services/paraglider.service';
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import { CreateParagliderComponent } from './components/create-paraglider/create
   ],
   providers: [
     AuthService,
-    GliderService,
+    ParagliderService,
     BrandService,
     {
       provide: HTTP_INTERCEPTORS,

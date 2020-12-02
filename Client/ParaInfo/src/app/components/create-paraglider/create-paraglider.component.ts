@@ -55,9 +55,7 @@ export class CreateParagliderComponent implements OnInit {
     })
   }
 
-  test(){
-    console.log(this.createParagliderForm);
-
+  createParaglider(){
     console.log(this.createParagliderForm.value);
     console.log(this.sizeArray);
   }
