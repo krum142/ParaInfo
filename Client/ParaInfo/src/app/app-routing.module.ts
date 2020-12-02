@@ -13,11 +13,11 @@ import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'brand/:name', component: BrandComponent },
-  { path: 'brand/:name/:category', component: BrandComponent },
+  { path: 'brand/:brandName', component: BrandComponent },
+  { path: 'brand/:brandName/:category', component: BrandComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'createBrand', component: CreateBrandComponent, canActivate: [AuthGuardService] },
-  { path: 'createParagliders', component: CreateParagliderComponent, canActivate: [AuthGuardService]},
+  { path: 'createParagliders/:brandName', component: CreateParagliderComponent, canActivate: [AuthGuardService]},
   { path: '**', component: NoPageFoundComponent }
 
 ];

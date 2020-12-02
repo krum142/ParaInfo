@@ -1,0 +1,106 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.header{
+    display: inline-block;
+    border-radius: 15px;
+    border: 3px solid black;
+    font-size: 20px;
+    margin: 15px;
+    padding: 20px;
+}
+
+.body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.groups{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 3px solid black;
+    padding: 20px;
+    margin: 10px;
+}
+
+.item-container{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.item-container label{
+    font-size: 16.7px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+input{
+    background: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    max-width: 200px;
+    font-size: 17px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.remove-button{
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    background: white;
+    font-size: 35px;
+}
+
+.remove-button i{
+    text-align: center;
+}
+
+.add-button{
+    background: white;
+    border: 3px solid black ;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 400px 70px;
+    min-width: 250px;
+}
+
+.add-button i{
+    font-size: 100px;
+    color: #55CB31;
+}
+
+.submit-button{
+    background: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}

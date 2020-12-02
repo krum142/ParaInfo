@@ -1,1 +1,200 @@
-<p>create-paraglider works!</p>
+<section>
+    
+    <article>
+        <form [formGroup]="createParagliderForm" (ngSubmit)="test()">
+            <div class="header">
+                <div class="item-container">
+                    <h1>Brand: {{brandName}}</h1>
+                </div>
+                <div class="item-container">
+                    <!-- <span class="Error">Model is Required! </span> -->
+                    <label for="model">Model</label>
+                    <input type="text" formControlName="model">
+                </div>
+
+                <div class="item-container">
+                    <label for="price">Price (Euro)</label>
+                    <input type="text" formControlName="price">
+                </div>
+            </div>
+            <div class="body" formArrayName="sizes">
+                <div class="groups">
+                    <div class="item-container">
+                        <label for="wingSize">WingSize</label>
+                    </div>
+
+                    <div>
+                        <div class="item-container">
+                            <label for="area">Flat Area(m²)</label>
+                        </div>
+                        <div class="item-container">
+                            <label for="span">Flat Span(m)</label>
+                        </div>
+                        <div class="item-container">
+                            <label for="aspectRatio">Flat AspectRatio</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="item-container">
+                            <label for="area">Proj Area(m²)</label>
+                        </div>
+                        <div class="item-container">
+                            <label for="span">Proj Span(m)</label>
+                        </div>
+                        <div class="item-container">
+                            <label for="aspectRatio">Proj AspectRatio</label>
+                        </div>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="flattening">Flattening(%)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="upperSurface">Upper Surface(type)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="underSurface">Under Surface(type)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="numberCells">Number Cells</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="weight">Weight(kg)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="risers">Risers(lines)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="nakedPilot">NakedPilot(kg)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="inflightWeight">Inflight Weight(kg)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="wingLoading">WingLoading(kg/m²)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="minSpeed">MinSpeed(km/h)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="trimSpeed">TrimSpeed(km/h)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="maxSpeed">MaxSpeed(km/h)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="minSinkRate">Min SinkRate(m/s)</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="certification">Certification</label>
+                    </div>
+                </div>
+                <div class="groups" *ngFor="let group of sizeArray.controls;let i = index;" [formGroupName]="i">
+
+                    <div class="item-container">
+                        <input type="text" formControlName="wingSize">
+                    </div>
+
+                    <div formGroupName="flat">
+                        <div class="item-container">
+                            <input type="text" formControlName="area">
+                        </div>
+                        <div class="item-container">
+                            <input type="text" formControlName="span">
+                        </div>
+                        <div class="item-container">
+                            <input type="text" formControlName="aspectRatio">
+                        </div>
+                    </div>
+
+                    <div formGroupName="proj">
+                        <div class="item-container">
+                            <input type="text" formControlName="area">
+                        </div>
+                        <div class="item-container">
+                            <input type="text" formControlName="span">
+                        </div>
+                        <div class="item-container">
+                            <input type="text" formControlName="aspectRatio">
+                        </div>
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="flattening">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="upperSurface">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="underSurface">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="numberCells">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="weight">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="risers">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="nakedPilot">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="inflightWeight">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="wingLoading">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="minSpeed">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="trimSpeed">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="maxSpeed">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="minSinkRate">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" formControlName="certification">
+                    </div>
+                    
+                    <button class="remove-button" (click)="removeSize(i)"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <button class="add-button" (click)="addSize()"><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <button class="submit-button" type="submit">Create Paraglider</button>
+        </form>
+    </article>
+
+</section>

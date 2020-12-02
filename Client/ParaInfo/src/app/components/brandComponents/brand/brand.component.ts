@@ -18,7 +18,7 @@ export class BrandComponent implements OnInit {
     private route: ActivatedRoute,
     private brandService: BrandService) {
 
-    this.brandName = this.route.snapshot.params.name;
+    this.brandName = this.route.snapshot.params.brandName;
     this.categoryRoute = this.route.snapshot.params.category;
     if(!this.categoryRoute){
       this.categoryRoute = "Paragliders";
