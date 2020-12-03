@@ -23,6 +23,11 @@ namespace Services.Services.Data
             return await mongoDb.FindByIdAsync(id);
         }
 
+        public async Task<Paraglider> GetByModelAndBrandAsync(string brand, string model)
+        {
+            return await mongoDb.FindOneAsync(x => x.Model.ToLower() == model.ToLower() && x.Brand.ToLower() == brand.ToLower());
+        }
+
         public async Task<Paraglider> GetByModelAsync(string model)
         {
             return await mongoDb.FindOneAsync(x => x.Model == model);

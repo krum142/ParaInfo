@@ -15,7 +15,7 @@ export class ParagliderService {
     return this.http.post(this.Path,data);
   }
 
-  getModel(model:string):Observable<any>{
-    return this.http.get(`${this.Path}/${model}`);
+  getModel(brand:string,model:string):Observable<any>{
+    return this.http.get(`${this.Path}/${brand}/${model}`);
   }
 }

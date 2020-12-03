@@ -2,14 +2,14 @@
 
     <article>
         <form [formGroup]="createParagliderForm" (ngSubmit)="createParaglider()">
-            <div class="header">
+            <div class="header" >
                 <div class="item-container">
                     <h1>Brand: {{brandName}}</h1>
                 </div>
                 <div class="item-container">
-                    <span class="Error" *ngIf="this.modelName" >Model is AlreadyExists!</span>
+                    <span class="span-error" *ngIf="createParagliderForm.controls.model?.errors?.modelAlreadyExists" >this model Already Exists </span>
                     <label for="model">Model</label>
-                   
+                    
                     <input [ngClass]="{'input-err': createParagliderForm.controls.model.invalid && createParagliderForm.controls.model.touched}" type="text" formControlName="model" maxlength="31">
                 </div>
 

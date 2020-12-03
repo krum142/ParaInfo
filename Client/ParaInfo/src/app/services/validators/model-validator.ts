@@ -11,15 +11,15 @@ export class ModelValidator {
 
   }
 
-  checkModel(control: FormControl): any {
+  checkModel(brand:string,control: FormControl): any {
 
     clearTimeout(this.debouncer);
 
     return new Promise(resolve => {
       this.debouncer = setTimeout(() => {
 
-        this.paraService.getModel(control.value).subscribe((res) => {
-            
+        this.paraService.getModel(brand,control.value).subscribe((res) => {
+            console.log(res);
           if(res.model === control.value){
             resolve({'modelAlreadyExists': true});
           }

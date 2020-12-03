@@ -12,6 +12,8 @@ namespace Services.Services.Data.Interfaces
 
         public Task<Paraglider> GetByIdAsync(string id);
 
+        Task<Paraglider> GetByModelAndBrandAsync(string brand, string model);
+
         public Task<Paraglider> GetByModelAsync(string name);
 
         public Task<Paraglider> UpdateAsync(Paraglider customer);

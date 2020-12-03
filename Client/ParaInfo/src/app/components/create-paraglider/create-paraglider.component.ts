@@ -3,7 +3,6 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ParagliderService } from 'src/app/services/paraglider.service';
 import { ModelValidator } from 'src/app/services/validators/model-validator';
 
@@ -26,12 +25,10 @@ export class CreateParagliderComponent implements OnInit {
     this.brandName = this.route.snapshot.params.brandName;
     this.createParagliderForm = this.fb.group({
       'brand': this.brandName,
-      'model': ['',[Validators.required, Validators.maxLength(30)],modelValidator.checkModel.bind(modelValidator)],
+      'model': ['',[Validators.required, Validators.maxLength(30)],modelValidator.checkModel.bind(modelValidator,this.brandName)],
       'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'sizes': this.fb.array([this.addSizeGroup()]),
     });
-
-
   }
 
   ngOnInit(): void {
@@ -67,39 +64,12 @@ export class CreateParagliderComponent implements OnInit {
     })
   }
 
-
-
   log(x: any) {
     console.log(x);
   }
 
   getControl(group: any, property: string) {
     return group.controls[property];
-  }
-
-  doesModelExist(model: string): any {
-    if (model) {
-      this.paraService.getModel(model).subscribe(data => {
-        return data;
-      })
-    }
-  }
-
-  onFilterTextChanged(filterText: string): any {
-    if (this.filterTextChanged.observers.length === 0) {
-      this.filterTextChanged
-        .pipe(debounceTime(1000), distinctUntilChanged())
-        .subscribe(filterQuery => {
-          //this.modelName = this.doesModelExist(filterQuery)
-          this.paraService.getModel(filterQuery).subscribe(data => {
-            if(data.model){
-              this.modelName = true;
-            }
-            this.modelName = false;
-          })
-        });
-    }
-    this.filterTextChanged.next(filterText);
   }
 
   createParaglider() {
