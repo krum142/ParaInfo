@@ -1,5 +1,5 @@
 <section>
-    
+
     <article>
         <form [formGroup]="createParagliderForm" (ngSubmit)="createParaglider()">
             <div class="header">
@@ -7,14 +7,15 @@
                     <h1>Brand: {{brandName}}</h1>
                 </div>
                 <div class="item-container">
-                    <!-- <span class="Error">Model is Required! </span> -->
+                    <span class="Error" *ngIf="this.modelName" >Model is AlreadyExists!</span>
                     <label for="model">Model</label>
-                    <input type="text" formControlName="model">
+                   
+                    <input [ngClass]="{'input-err': createParagliderForm.controls.model.invalid && createParagliderForm.controls.model.touched}" type="text" formControlName="model" maxlength="31">
                 </div>
 
                 <div class="item-container">
                     <label for="price">Price (Euro)</label>
-                    <input type="text" formControlName="price">
+                    <input type="text" [ngClass]="{'input-err': createParagliderForm.controls.price.invalid && createParagliderForm.controls.price.touched}" formControlName="price" maxlength="21">
                 </div>
             </div>
             <div class="body" formArrayName="sizes">
@@ -103,92 +104,113 @@
                         <label for="certification">Certification</label>
                     </div>
                 </div>
-                <div class="groups" *ngFor="let group of sizeArray.controls;let i = index;" [formGroupName]="i">
-
+                <div class="groups" *ngFor="let group of sizeArray.controls; let i=index" [formGroupName]="i">
                     <div class="item-container">
-                        <input type="text" formControlName="wingSize">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'wingSize').invalid}" formControlName="wingSize">
                     </div>
 
                     <div formGroupName="flat">
                         <div class="item-container">
-                            <input type="text" formControlName="area">
+                            <input type="text" [ngClass]="{'input-err': getControl(group,'flat').controls.area.invalid}"
+                                formControlName="area">
                         </div>
                         <div class="item-container">
-                            <input type="text" formControlName="span">
+                            <input type="text" [ngClass]="{'input-err': getControl(group,'flat').controls.span.invalid}"
+                                formControlName="span">
                         </div>
                         <div class="item-container">
-                            <input type="text" formControlName="aspectRatio">
+                            <input type="text"
+                                [ngClass]="{'input-err': getControl(group,'flat').controls.aspectRatio.invalid}"
+                                formControlName="aspectRatio">
                         </div>
                     </div>
 
                     <div formGroupName="proj">
                         <div class="item-container">
-                            <input type="text" formControlName="area">
+                            <input type="text" [ngClass]="{'input-err': getControl(group,'proj').controls.area.invalid}"
+                                formControlName="area">
                         </div>
                         <div class="item-container">
-                            <input type="text" formControlName="span">
+                            <input type="text" [ngClass]="{'input-err': getControl(group,'proj').controls.span.invalid}"
+                                formControlName="span">
                         </div>
                         <div class="item-container">
-                            <input type="text" formControlName="aspectRatio">
+                            <input type="text"
+                                [ngClass]="{'input-err': getControl(group,'proj').controls.aspectRatio.invalid}"
+                                formControlName="aspectRatio">
                         </div>
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="flattening">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'flattening').invalid}"
+                            formControlName="flattening">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="upperSurface">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'upperSurface').invalid}"
+                            formControlName="upperSurface">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="underSurface">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'underSurface').invalid}"
+                            formControlName="underSurface">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="numberCells">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'numberCells').invalid}"
+                            formControlName="numberCells">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="weight">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'weight').invalid}"
+                            formControlName="weight">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="risers">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'risers').invalid}"
+                            formControlName="risers">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="nakedPilot">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'nakedPilot').invalid}"
+                            formControlName="nakedPilot">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="inflightWeight">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'inflightWeight').invalid}"
+                            formControlName="inflightWeight">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="wingLoading">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'wingLoading').invalid}"
+                            formControlName="wingLoading">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="minSpeed">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'minSpeed').invalid}"
+                            formControlName="minSpeed">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="trimSpeed">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'trimSpeed').invalid}"
+                            formControlName="trimSpeed">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="maxSpeed">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'maxSpeed').invalid}"
+                            formControlName="maxSpeed">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="minSinkRate">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'minSinkRate').invalid}"
+                            formControlName="minSinkRate">
                     </div>
 
                     <div class="item-container">
-                        <input type="text" formControlName="certification">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'certification').invalid}"
+                            formControlName="certification">
                     </div>
-                    
+
                     <button class="remove-button" (click)="removeSize(i)"><i class="fas fa-minus-circle"></i></button>
                 </div>
                 <button class="add-button" (click)="addSize()"><i class="fas fa-plus-circle"></i></button>

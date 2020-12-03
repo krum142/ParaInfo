@@ -68,6 +68,10 @@ input{
     margin: 5px 0;
 }
 
+.input-err{
+    border: 2px solid red;
+}
+
 .remove-button{
     border: none;
     border-radius: 5px;

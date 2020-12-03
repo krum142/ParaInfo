@@ -22,6 +22,7 @@ import { BrandCategoriesComponent } from './components/brandComponents/brand-cat
 import { BrandProductsComponent } from './components/brandComponents/brand-products/brand-products.component';
 import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
 import { ParagliderService } from './services/paraglider.service';
+import { ModelValidator } from './services/validators/model-validator';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ParagliderService } from './services/paraglider.service';
     AuthService,
     ParagliderService,
     BrandService,
+    ModelValidator,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

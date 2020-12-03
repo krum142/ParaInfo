@@ -11,6 +11,11 @@ export class ParagliderService {
   constructor(private http: HttpClient) { }
 
   create(data:any):Observable<any>{
+    console.log(data)
     return this.http.post(this.Path,data);
+  }
+
+  getModel(model:string):Observable<any>{
+    return this.http.get(`${this.Path}/${model}`);
   }
 }

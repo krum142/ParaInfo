@@ -38,6 +38,7 @@ namespace ParaInfoServer
             services.AddSingleton(typeof(DatabaseConfiguration));
             services.AddScoped(typeof(IMongoRepository<>),typeof(MongoRepository<>));
             services.AddTransient<IBrandService,BrandService>();
+            services.AddTransient<IParagliderService,ParagliderService>();
 
 
             services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
