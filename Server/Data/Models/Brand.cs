@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.ComponentModel.DataAnnotations;
 using Parainfo.Data.Common.Models;
 using ParaInfoServer.Attributes;

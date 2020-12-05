@@ -23,6 +23,9 @@ import { BrandProductsComponent } from './components/brandComponents/brand-produ
 import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
 import { ParagliderService } from './services/paraglider.service';
 import { ModelValidator } from './services/validators/model-validator';
+import { FormDataService } from './services/form-data.service';
+import { ParagliderFormComponent } from './components/create-paraglider-form/paraglider-form.component';
+
 
 
 @NgModule({
@@ -38,6 +41,7 @@ import { ModelValidator } from './services/validators/model-validator';
     NoPageFoundComponent,
     BrandCategoriesComponent,
     BrandProductsComponent,
+    ParagliderFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { ModelValidator } from './services/validators/model-validator';
   providers: [
     AuthService,
     ParagliderService,
+    FormDataService,
     BrandService,
     ModelValidator,
     {

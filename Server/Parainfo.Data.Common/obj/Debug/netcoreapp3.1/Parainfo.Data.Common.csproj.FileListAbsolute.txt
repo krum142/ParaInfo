@@ -1,0 +1,9 @@
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\netcoreapp3.1\Parainfo.Data.Common.deps.json
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\netcoreapp3.1\Parainfo.Data.Common.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\netcoreapp3.1\Parainfo.Data.Common.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.csprojAssemblyReference.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.AssemblyInfoInputs.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.AssemblyInfo.cs
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.csproj.CoreCompileInputs.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\netcoreapp3.1\Parainfo.Data.Common.pdb

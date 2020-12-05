@@ -1,6 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 using Parainfo.Data.Models;
 using Services.Services.Data.Interfaces;
 
@@ -35,23 +39,23 @@ namespace ParaInfoServer.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Post(Paraglider model)
+        public async Task<IActionResult> Post([FromForm]AddParagliderModel input)
         {
-            return Json(await paragliderService.CreateAsync(model));
+            return Json(await paragliderService.CreateAsync(input));
         }
 
         [HttpPut]
         [Authorize]
-        public async Task<IActionResult> Put(Paraglider model)
+        public async Task<IActionResult> Put(Paraglider input)
         {
-            return Json(await paragliderService.UpdateAsync(model));
+            return Json(await paragliderService.UpdateAsync(input));
         }
 
         [Authorize]
         [HttpDelete]
-        public async Task<IActionResult> Delete(Paraglider model)
+        public async Task<IActionResult> Delete(Paraglider input)
         {
-            return Json(await paragliderService.DeleteAsync(model.Id));
+            return Json(await paragliderService.DeleteAsync(input.Id));
         }
     }
 }

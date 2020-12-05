@@ -10,3 +10,8 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\net5.0\Par
 C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\net5.0\Parainfo.Data.Common.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\net5.0\ref\Parainfo.Data.Common.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\net5.0\Parainfo.Data.Common.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\bin\Debug\net5.0\System.IO.Pipelines.xml
+C:\Users\PC-12\Desktop\ParaInfo\Server\Parainfo.Data.Common\obj\Debug\net5.0\Parainfo.Data.Common.csproj.CopyComplete

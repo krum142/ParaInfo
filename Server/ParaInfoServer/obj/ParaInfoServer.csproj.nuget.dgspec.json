@@ -191,13 +191,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "AspNetCore.Identity.Mongo": {
-              "target": "Package",
-              "version": "[6.7.2, )"
-            },
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.14.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -278,6 +278,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.14.0, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.11.4, )"

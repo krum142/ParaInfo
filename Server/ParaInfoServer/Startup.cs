@@ -9,8 +9,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Parainfo.Data.Models.Identity;
 using System.Text;
+using CloudinaryDotNet;
 using Parainfo.Data.Common.Repositories;
 using Parainfo.Data.Configs;
+using Services.Services;
 using Services.Services.Data;
 using Services.Services.Data.Interfaces;
 
@@ -34,11 +36,7 @@ namespace ParaInfoServer
             var databaseConfiguration = this.Configuration.GetSection("DatabaseConfiguration");
             services.Configure<DatabaseConfiguration>(databaseConfiguration);
 
-
-            services.AddSingleton(typeof(DatabaseConfiguration));
-            services.AddScoped(typeof(IMongoRepository<>),typeof(MongoRepository<>));
-            services.AddTransient<IBrandService,BrandService>();
-            services.AddTransient<IParagliderService,ParagliderService>();
+           
 
 
             services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
@@ -82,11 +80,28 @@ namespace ParaInfoServer
                     };
                 });
 
+            
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParaInfo", Version = "v1" });
             });
+
+            var cloudName = this.Configuration["Cloudinary:Name"];
+            var apiKey = this.Configuration["Cloudinary:Key"];
+            var apiSecret = this.Configuration["Cloudinary:Secret"];
+
+            var account = new Account(cloudName, apiKey, apiSecret);
+            var cloudinary = new Cloudinary(account);
+
+
+            services.AddSingleton(typeof(DatabaseConfiguration));
+            services.AddSingleton(cloudinary);
+            services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<IParagliderService, ParagliderService>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,34 +5,28 @@ import { ParagliderService } from '../paraglider.service';
 @Injectable()
 export class ModelValidator {
 
-  debouncer: any;
+    debouncer: any;
 
-  constructor(public paraService: ParagliderService){
+    constructor(public paraService: ParagliderService) {
 
-  }
+    }
+    checkModel(brand: string, control: FormControl): any {
+        clearTimeout(this.debouncer);
 
-  checkModel(brand:string,control: FormControl): any {
+        return new Promise(resolve => {
+            this.debouncer = setTimeout(() => {
+                this.paraService.getModel(brand, control.value).subscribe((res) => {
+                    if (res.model === control.value.toLowerCase()) {
+                        resolve({ 'modelAlreadyExists': true });
+                    }
+                    else {
+                        resolve(null);
+                    }
+                }, (err) => {
+                    resolve({ 'modelAlreadyExists': true });
+                });
 
-    clearTimeout(this.debouncer);
-
-    return new Promise(resolve => {
-      this.debouncer = setTimeout(() => {
-
-        this.paraService.getModel(brand,control.value).subscribe((res) => {
-            console.log(res);
-          if(res.model === control.value){
-            resolve({'modelAlreadyExists': true});
-          }
-          else{
-              resolve(null);
-          }
-        }, (err) => {
-          resolve({'modelAlreadyExists': true});
+            }, 1000);
         });
-
-      }, 1000);      
-
-    });
-  }
-
+    }
 }

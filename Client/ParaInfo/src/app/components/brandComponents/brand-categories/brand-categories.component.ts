@@ -22,7 +22,6 @@ export class BrandCategoriesComponent implements OnInit {
     else if (!this.categories.includes(this.categoryRoute)) {
       this.router.navigate(['**']);
     }
-    console.log(this.categoryRoute);
   }
 
 

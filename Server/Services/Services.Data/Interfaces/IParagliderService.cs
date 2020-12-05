@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Parainfo.Data.Models;
 
@@ -6,7 +8,7 @@ namespace Services.Services.Data.Interfaces
 {
     public interface IParagliderService
     {
-        public Task<Paraglider> CreateAsync(Paraglider customer);
+        public Task<Paraglider> CreateAsync(AddParagliderModel model);
 
         public Task<IEnumerable<Paraglider>> GetAllAsync();
 

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "lkMqnExqsGZt41nUiyWYzaL8EiyJq+/4aEXsLyBzXpP4VdSAqCf4AZBfsf5LnqAGaS1WCeI8+8dTAeFkit8dAA==",
+  "dgSpecHash": "zHPkhu3Vo9a57xY8982x1I2HvOVRi64zU4jQJvWZ4yO3bAVezqt6KxVgZE1sZ7BW76zusFwfwSAGG0nHk/ti+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfoServer\\ParaInfoServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-12\\.nuget\\packages\\aspnetcore.identity.mongo\\6.7.2\\aspnetcore.identity.mongo.6.7.2.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\PC-12\\.nuget\\packages\\cloudinarydotnet\\1.14.0\\cloudinarydotnet.1.14.0.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -58,6 +59,7 @@
     "C:\\Users\\PC-12\\.nuget\\packages\\mongodb.driver.core\\2.11.4\\mongodb.driver.core.2.11.4.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\mongodb.libmongocrypt\\1.0.0\\mongodb.libmongocrypt.1.0.0.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\PC-12\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\PC-12\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

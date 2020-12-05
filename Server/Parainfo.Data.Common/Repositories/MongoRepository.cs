@@ -50,12 +50,6 @@ namespace Parainfo.Data.Common.Repositories
             return _collection.Find(filterExpression).Project(projectionExpression).ToEnumerable();
         }
 
-        //public virtual async string GetId(T model)
-        //{
-        //    var result = await this._collection.FindAsync(x => x.Id == model.Id);
-
-        //    return await result.FirstOrDefaultAsync().Id.
-        //}
 
         public virtual T FindOne(Expression<Func<T, bool>> filterExpression)
         {

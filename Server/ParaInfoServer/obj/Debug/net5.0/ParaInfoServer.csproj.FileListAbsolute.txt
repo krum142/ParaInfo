@@ -99,3 +99,5 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Parainfo.Data.Common.pdb
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Services.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Services.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\CloudinaryDotNet.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\Newtonsoft.Json.dll
