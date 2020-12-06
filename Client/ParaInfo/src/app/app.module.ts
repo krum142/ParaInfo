@@ -25,6 +25,7 @@ import { FormDataService } from './services/form-data.service';
 import { ParagliderFormComponent } from './components/paraglider-form/paraglider-form.component';
 import { LoadBrandProductsComponent } from './components/load-brand-products/load-brand-products.component';
 import { MyValidators } from './services/MyValidators';
+import { GetProductsService } from './services/get-products.service';
 
 
 
@@ -54,6 +55,7 @@ import { MyValidators } from './services/MyValidators';
     AuthService,
     ParagliderService,
     FormDataService,
+    GetProductsService,
     BrandService,
     MyValidators,
     {

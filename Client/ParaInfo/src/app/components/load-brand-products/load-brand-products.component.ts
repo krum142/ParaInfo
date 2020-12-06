@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GetProductsService } from 'src/app/services/get-products.service';
 
 @Component({
   selector: 'app-load-brand-products',
@@ -9,9 +10,17 @@ export class LoadBrandProductsComponent implements OnInit {
 
   @Input() brandName: string = "";
   @Input() categoryName: string = "";
-  constructor() { }
+  products: any;
+  constructor(private productsService: GetProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getAll(this.categoryName,this.brandName).subscribe(data => {
+      console.log(data);
+      this.products = data;
+    });
   }
 
+  log(e:any){
+    console.log(e)
+  }
 }

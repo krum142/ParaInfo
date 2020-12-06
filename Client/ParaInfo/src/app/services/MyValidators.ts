@@ -38,7 +38,7 @@ export class MyValidators {
         clearTimeout(this.debouncer);
         return new Promise(resolve => {
             this.debouncer = setTimeout(() => {
-                console.log(!validTypes.includes(control.value.type));
+                //console.log(!validTypes.includes(control.value.type));
                 if (!validTypes.includes(control.value.type)) {
                     resolve({ "wrongFileType": true });
                 }

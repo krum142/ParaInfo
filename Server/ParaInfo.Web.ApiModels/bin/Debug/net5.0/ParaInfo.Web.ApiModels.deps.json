@@ -9,6 +9,7 @@
       "ParaInfo.Web.ApiModels/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
+          "ParaInfo.Web.Infrastructure": "1.0.0",
           "Parainfo.Data": "1.0.0"
         },
         "runtime": {
@@ -1243,6 +1244,14 @@
         "runtime": {
           "Parainfo.Data.Common.dll": {}
         }
+      },
+      "ParaInfo.Web.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.0"
+        },
+        "runtime": {
+          "ParaInfo.Web.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2119,6 +2128,11 @@
       "sha512": ""
     },
     "Parainfo.Data.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ParaInfo.Web.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -15,3 +15,5 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\obj\Debug\net5.0\P
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\obj\Debug\net5.0\ParaInfo.Web.ApiModels.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\obj\Debug\net5.0\ref\ParaInfo.Web.ApiModels.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\obj\Debug\net5.0\ParaInfo.Web.ApiModels.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\bin\Debug\net5.0\ParaInfo.Web.Infrastructure.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfo.Web.ApiModels\bin\Debug\net5.0\ParaInfo.Web.Infrastructure.pdb

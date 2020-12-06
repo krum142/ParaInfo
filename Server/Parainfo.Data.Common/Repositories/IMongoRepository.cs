@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 using Parainfo.Data.Common.Models;
 
 namespace Parainfo.Data.Common.Repositories
@@ -29,6 +30,11 @@ namespace Parainfo.Data.Common.Repositories
         Task<T> FindByIdAsync(string id);
 
         Task<IEnumerable<T>> GetAllAsync();
+
+        Task<IEnumerable<T>> GetAllFilteredAsync(ProjectionDefinition<T, T> projection);
+
+        Task<IEnumerable<T>> GetAllFilteredByBrandAsync(Expression<Func<T, bool>> filterExpression,
+            ProjectionDefinition<T, T> projection);
 
         void InsertOne(T document);
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ export class BrandCategoriesComponent implements OnInit {
   @Input() brandName: string = "";
   @Input() categoryName: string = "";
   @Input() categories = new Array<string>();
-  
+  @Output() page: Number = 0;
   constructor(private router: Router) {
 
   }

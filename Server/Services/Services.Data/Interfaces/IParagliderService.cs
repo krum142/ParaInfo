@@ -13,9 +13,13 @@ namespace Services.Services.Data.Interfaces
 
         public Task<IEnumerable<Paraglider>> GetAllAsync();
 
+        public Task<IEnumerable<Paraglider>> GetAllFilteredAsync();
+
+        public Task<IEnumerable<Paraglider>> GetAllByBrandFilteredAsync(string brand);
+
         public Task<Paraglider> GetByIdAsync(string id);
 
-        Task<Paraglider> GetByModelAndBrandAsync(string brand, string model);
+        public Task<Paraglider> GetByModelAndBrandAsync(string brand, string model);
 
         public Task<Paraglider> GetByModelAsync(string name);
 

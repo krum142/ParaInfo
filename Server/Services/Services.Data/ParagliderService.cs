@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 using Parainfo.Data.Common.Repositories;
 using Parainfo.Data.Models;
 using ParaInfo.Web.ApiModels.Paraglider;
@@ -22,6 +23,26 @@ namespace Services.Services.Data
         public async Task<IEnumerable<Paraglider>> GetAllAsync()
         {
             return await mongoDb.GetAllAsync();
+        }
+
+        public async Task<IEnumerable<Paraglider>> GetAllFilteredAsync()
+        {
+            var projection = Builders<Paraglider>.Projection
+                .Include(p => p.Model)
+                .Include(x => x.ImgUrl)
+                .Include(x => x.Brand);
+
+            return await mongoDb.GetAllFilteredAsync(projection);
+        }
+
+        public async Task<IEnumerable<Paraglider>> GetAllByBrandFilteredAsync(string brand)
+        {
+            var projection = Builders<Paraglider>.Projection
+                .Include(p => p.Model)
+                .Include(x => x.ImgUrl)
+                .Include(x => x.Brand);
+
+            return await mongoDb.GetAllFilteredByBrandAsync(x => x.Brand == brand,projection);
         }
         public async Task<Paraglider> GetByIdAsync(string id)
         {

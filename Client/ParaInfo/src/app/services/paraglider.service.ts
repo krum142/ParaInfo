@@ -21,6 +21,4 @@ export class ParagliderService {
     }
     return EMPTY;
   }
-
-
 }

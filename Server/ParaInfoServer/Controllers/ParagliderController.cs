@@ -19,7 +19,13 @@ namespace ParaInfoServer.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Json(await paragliderService.GetAllAsync());
+            return Json(await paragliderService.GetAllFilteredAsync());
+        }
+
+        [HttpGet("{brand}")]
+        public async Task<IActionResult> Get(string brand)
+        {
+            return Json(await paragliderService.GetAllByBrandFilteredAsync(brand));
         }
 
         [HttpGet("{brand}/{model}")]

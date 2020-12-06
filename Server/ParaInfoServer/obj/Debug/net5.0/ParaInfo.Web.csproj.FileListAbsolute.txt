@@ -55,3 +55,5 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfo.
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ref\ParaInfo.Web.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfo.Web.pdb
 C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\obj\Debug\net5.0\ParaInfo.Web.genruntimeconfig.cache
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\ParaInfo.Web.Infrastructure.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\ParaInfoServer\bin\Debug\net5.0\ParaInfo.Web.Infrastructure.pdb
