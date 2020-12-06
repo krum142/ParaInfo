@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Parainfo.Data.Common.Attributes;
 using Parainfo.Data.Common.Models;
-using ParaInfoServer.Attributes;
 
 namespace Parainfo.Data.Models
 {
@@ -14,12 +14,13 @@ namespace Parainfo.Data.Models
             this.Id = Guid.NewGuid().ToString();
         }
 
+        [Required]
         public string Brand { get; set; }
-
+        [Required]
         public string Model { get; set; }
 
         public decimal Price  { get; set; }
-
+        [Required]
         public string ImgUrl { get; set; }
 
         public IEnumerable<Size> Sizes { get; set; }

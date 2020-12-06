@@ -8,22 +8,16 @@ import { Router } from '@angular/router';
 })
 export class BrandCategoriesComponent implements OnInit {
   @Input() brandName: string = "";
-  @Input() categoryRoute: string = "";
-  categories: Array<string> = ['Paragliders', 'Harnesses', 'Reserves', 'Bags', 'Accessoars'];
-
+  @Input() categoryName: string = "";
+  @Input() categories = new Array<string>();
+  
   constructor(private router: Router) {
 
   }
 
   ngOnInit(): void {
-    if (!this.categoryRoute) {
-      this.categoryRoute = this.categories[0];
-    }
-    else if (!this.categories.includes(this.categoryRoute)) {
-      this.router.navigate(['**']);
-    }
+    
   }
-
 
   changeAndReloadRoute(category:string) {
     let url = `brand/${this.brandName}/${category}`;

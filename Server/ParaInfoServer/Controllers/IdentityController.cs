@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
@@ -12,7 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Parainfo.Data.Models.Identity;
 
-namespace ParaInfoServer.Controllers
+namespace ParaInfoServer.Web.Controllers
 {
     public class IdentityController : ApiController
     {

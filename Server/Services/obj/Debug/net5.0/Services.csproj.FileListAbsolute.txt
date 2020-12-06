@@ -15,3 +15,5 @@ C:\Users\PC-12\Desktop\ParaInfo\Server\Services\obj\Debug\net5.0\Services.csproj
 C:\Users\PC-12\Desktop\ParaInfo\Server\Services\obj\Debug\net5.0\Services.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\Services\obj\Debug\net5.0\ref\Services.dll
 C:\Users\PC-12\Desktop\ParaInfo\Server\Services\obj\Debug\net5.0\Services.pdb
+C:\Users\PC-12\Desktop\ParaInfo\Server\Services\bin\Debug\net5.0\ParaInfo.Web.ApiModels.dll
+C:\Users\PC-12\Desktop\ParaInfo\Server\Services\bin\Debug\net5.0\ParaInfo.Web.ApiModels.pdb

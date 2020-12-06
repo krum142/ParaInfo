@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Parainfo.Data.Common.Repositories;
 using Parainfo.Data.Models;
+using ParaInfo.Web.ApiModels.Paraglider;
 using Services.Services.Data.Interfaces;
 
 namespace Services.Services.Data
@@ -39,8 +40,9 @@ namespace Services.Services.Data
 
         public async Task<Paraglider> CreateAsync(AddParagliderModel model)
         {
-            var url = await cloudinaryService.UploadImageAsync(model.File);
+            if (await GetByModelAndBrandAsync(model.Brand, model.Model) != null) return null;
 
+            var url = await cloudinaryService.UploadImageAsync(model.File);
 
             var paraglider = new Paraglider
             {
@@ -52,6 +54,7 @@ namespace Services.Services.Data
             };
             await mongoDb.InsertOneAsync(paraglider);
             return paraglider;
+
         }
         public async Task<Paraglider> UpdateAsync(Paraglider customer)
         {

@@ -9,25 +9,35 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
   brand: any;
-  categoryRoute: string;
+  categoryName: string;
   brandName: string;
   showDetails: boolean = true;
+  categories: Array<string> = ['Paragliders', 'Harnesses', 'Reserves', 'Bags', 'Accessoars'];
 
   constructor(
     private route: ActivatedRoute,
-    private brandService: BrandService) {
-
+    private brandService: BrandService,
+    private router: Router) {
+      
     this.brandName = this.route.snapshot.params.brandName;
-    this.categoryRoute = this.route.snapshot.params.category;
-    if(!this.categoryRoute){
-      this.categoryRoute = "Paragliders";
+    this.categoryName = this.route.snapshot.params.category;
+    if(!this.categoryName){
+      this.categoryName = "Paragliders";
     }
+    console.log(this.categoryName)
   }
 
   ngOnInit(): void {
     this.brandService.getBrand(this.brandName).subscribe(data => {
       this.brand = data;
     });
+
+    if (!this.categoryName) {
+      this.categoryName = this.categories[0];
+    }
+    else if (!this.categories.includes(this.categoryName)) {
+      this.router.navigate(['**']);
+    }
   }
 
   toggleDetails() {

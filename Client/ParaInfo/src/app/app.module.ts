@@ -19,12 +19,13 @@ import { NoPageFoundComponent } from './components/no-page-found/no-page-found.c
 import { CreateBrandComponent } from './components/brandComponents/create-brand/create-brand.component';
 import { BrandComponent } from './components/brandComponents/brand/brand.component';
 import { BrandCategoriesComponent } from './components/brandComponents/brand-categories/brand-categories.component';
-import { BrandProductsComponent } from './components/brandComponents/brand-products/brand-products.component';
 import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
 import { ParagliderService } from './services/paraglider.service';
-import { ModelValidator } from './services/validators/model-validator';
 import { FormDataService } from './services/form-data.service';
-import { ParagliderFormComponent } from './components/create-paraglider-form/paraglider-form.component';
+import { ParagliderFormComponent } from './components/paraglider-form/paraglider-form.component';
+import { LoadBrandProductsComponent } from './components/load-brand-products/load-brand-products.component';
+import { MyValidators } from './services/MyValidators';
+
 
 
 
@@ -40,8 +41,8 @@ import { ParagliderFormComponent } from './components/create-paraglider-form/par
     BrandComponent,
     NoPageFoundComponent,
     BrandCategoriesComponent,
-    BrandProductsComponent,
     ParagliderFormComponent,
+    LoadBrandProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,7 @@ import { ParagliderFormComponent } from './components/create-paraglider-form/par
     ParagliderService,
     FormDataService,
     BrandService,
-    ModelValidator,
+    MyValidators,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

@@ -1,7 +1,7 @@
-﻿using MongoDB.Bson;
-using System;
+﻿using System;
+using MongoDB.Bson;
 
-namespace MongoDB.Data.Documents
+namespace ParaInfoServer.Web.Documents
 {
     public abstract class Document : IDocument
     {

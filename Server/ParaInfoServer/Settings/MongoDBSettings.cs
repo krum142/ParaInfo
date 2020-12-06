@@ -1,4 +1,4 @@
-﻿namespace MongoDB.Data.Settings
+﻿namespace ParaInfoServer.Web.Settings
 {
     public class MongoDbSettings : IMongoDbSettings
     {

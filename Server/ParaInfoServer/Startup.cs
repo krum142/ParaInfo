@@ -1,4 +1,6 @@
+using System.Text;
 using AspNetCore.Identity.Mongo;
+using CloudinaryDotNet;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,17 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Parainfo.Data.Models.Identity;
-using System.Text;
-using CloudinaryDotNet;
+using Parainfo.Data.Common.Configs;
 using Parainfo.Data.Common.Repositories;
-using Parainfo.Data.Configs;
+using Parainfo.Data.Models.Identity;
 using Services.Services;
 using Services.Services.Data;
 using Services.Services.Data.Interfaces;
 
-
-namespace ParaInfoServer
+namespace ParaInfoServer.Web
 {
     public class Startup
     {

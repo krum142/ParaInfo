@@ -1,11 +1,10 @@
 ﻿using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parainfo.Data.Models;
 using Services.Services.Data.Interfaces;
 
-namespace ParaInfoServer.Controllers
+namespace ParaInfoServer.Web.Controllers
 {
     public class BrandController : ApiController
     {

@@ -12,8 +12,6 @@ export class ParagliderService {
 
   create(data: any): Observable<any> {
     let headers = new HttpHeaders()
-    //headers = headers.set('Content-Type', 'multipart/form-data');
-    //headers = headers.set('Content-Type','application/json');
     return this.http.post(this.Path, data);
   }
 
@@ -23,4 +21,6 @@ export class ParagliderService {
     }
     return EMPTY;
   }
+
+
 }

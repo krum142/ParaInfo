@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Parainfo.Data.Common.Attributes;
+using Parainfo.Data.Common.Configs;
 using Parainfo.Data.Common.Models;
-using Parainfo.Data.Configs;
-using ParaInfoServer.Attributes;
 
 namespace Parainfo.Data.Common.Repositories
 {

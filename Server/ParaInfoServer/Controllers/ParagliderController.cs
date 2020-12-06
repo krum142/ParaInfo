@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Any;
 using Parainfo.Data.Models;
+using ParaInfo.Web.ApiModels.Paraglider;
 using Services.Services.Data.Interfaces;
 
-namespace ParaInfoServer.Controllers
+namespace ParaInfoServer.Web.Controllers
 {
     public class ParagliderController : ApiController
     {
@@ -41,7 +38,12 @@ namespace ParaInfoServer.Controllers
         [Authorize]
         public async Task<IActionResult> Post([FromForm]AddParagliderModel input)
         {
-            return Json(await paragliderService.CreateAsync(input));
+            var result = await paragliderService.CreateAsync(input);
+            if (result == null)
+            {
+                return Json(new {});
+            }
+            return Json(result);
         }
 
         [HttpPut]

@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Parainfo.Data.csproj" />
+    <ProjectReference Include="..\ParaInfo.Web.ApiModels\ParaInfo.Web.ApiModels.csproj" />
   </ItemGroup>
 
 </Project>

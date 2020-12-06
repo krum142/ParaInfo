@@ -1,4 +1,4 @@
-﻿namespace Parainfo.Data.Configs
+﻿namespace Parainfo.Data.Common.Configs
 {
     public class DatabaseConfiguration
     {

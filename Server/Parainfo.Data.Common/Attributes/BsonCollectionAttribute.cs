@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ParaInfoServer.Attributes
+namespace Parainfo.Data.Common.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class BsonCollectionAttribute : Attribute

@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Parainfo.Data.Models;
+using ParaInfo.Web.ApiModels.Paraglider;
 
 namespace Services.Services.Data.Interfaces
 {

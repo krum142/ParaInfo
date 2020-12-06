@@ -1,8 +1,8 @@
-﻿using MongoDB.Bson;
+﻿using System;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
 
-namespace MongoDB.Data.Documents
+namespace ParaInfoServer.Web.Documents
 {
     public interface IDocument
     {
