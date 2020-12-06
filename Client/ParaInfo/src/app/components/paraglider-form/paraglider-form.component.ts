@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -23,21 +23,35 @@ export class ParagliderFormComponent implements OnInit {
     private myValidators: MyValidators,
     private formdataService: FormDataService,
     private paraService: ParagliderService) {
+
     this.brandName = this.route.snapshot.params.brandName;
     this.createParagliderForm = this.fb.group({
       'brand': this.brandName,
       'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, this.brandName)],
-      'file': ['', [Validators.required],this.myValidators.checkFile.bind(this.myValidators)],
+      'file': ['', [Validators.required], this.myValidators.checkFile.bind(this.myValidators)],
       'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'sizes': this.fb.array([this.addSizeGroup()]),
     });
+
   }
 
   ngOnInit(): void {
+
+
+    // let x = {
+    //   "sizes": [
+    //     { "wingSize": "20","flat":{"area":"40"} },
+    //      { "wingSize": "25" }]
+      
+    // }
+
     
-    // this.createParagliderForm.patchValue({
-    //   "model": "epsilon 1023",
-    // })
+
+    // this.createParagliderForm.controls['sizes'] = this.fb.array(x.sizes.map(size => {
+    //   const group = this.addSizeGroup();
+    //   group.patchValue(size);
+    //   return group;
+    // }));
   }
 
   addSizeGroup() {
@@ -61,7 +75,7 @@ export class ParagliderFormComponent implements OnInit {
       'certification': ['', Validators.maxLength(30)],
     });
   }
-  log(x:any){
+  log(x: any) {
     console.log(x);
   }
   addArea() {
