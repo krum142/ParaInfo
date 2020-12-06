@@ -17,11 +17,14 @@
                         type="text" formControlName="model" maxlength="31">
                 </div>
                 <div class="file-container">
-                    <input class="file-input" id="actual-btn" (change)="onFileChange($event)" type="file" formControlName="file" hidden accept=".png, .pdf, .jpg, .jpeg">
+                    <input class="file-input" id="actual-btn" (change)="onFileChange($event)" type="file" formControlName="file" hidden accept=".png, .jpg, .jpeg, .gif">
                     
                     <!-- name of file chosen -->
                     <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.required">Img Is Required</span>
-                    <span id="file-chosen">{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
+                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileType">Wrong Image Extension</span>
+                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileSize">Max File Size 2Mb</span>
+                    
+                    <span id="file-chosen" (click)="log(createParagliderForm.controls.file)" >{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
                     <!-- our custom upload button -->
                     <label class="file-label" for="actual-btn">Choose Img</label>
 

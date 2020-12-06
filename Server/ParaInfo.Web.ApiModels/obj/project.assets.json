@@ -1891,6 +1891,19 @@
         "runtime": {
           "bin/placeholder/Parainfo.Data.Common.dll": {}
         }
+      },
+      "ParaInfo.Web.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ParaInfo.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParaInfo.Web.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -6158,11 +6171,17 @@
       "type": "project",
       "path": "../Parainfo.Data.Common/Parainfo.Data.Common.csproj",
       "msbuildProject": "../Parainfo.Data.Common/Parainfo.Data.Common.csproj"
+    },
+    "ParaInfo.Web.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../ParaInfo.Web.Infrastructure/ParaInfo.Web.Infrastructure.csproj",
+      "msbuildProject": "../ParaInfo.Web.Infrastructure/ParaInfo.Web.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.0",
+      "ParaInfo.Web.Infrastructure >= 1.0.0",
       "Parainfo.Data >= 1.0.0"
     ]
   },
@@ -6200,6 +6219,9 @@
           "projectReferences": {
             "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
               "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj"
+            },
+            "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj"
             }
           }
         }

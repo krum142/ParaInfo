@@ -2096,6 +2096,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
+          "ParaInfo.Web.Infrastructure": "1.0.0",
           "Parainfo.Data": "1.0.0"
         },
         "compile": {
@@ -2103,6 +2104,19 @@
         },
         "runtime": {
           "bin/placeholder/ParaInfo.Web.ApiModels.dll": {}
+        }
+      },
+      "ParaInfo.Web.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ParaInfo.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParaInfo.Web.Infrastructure.dll": {}
         }
       },
       "Services/1.0.0": {
@@ -6765,6 +6779,11 @@
       "type": "project",
       "path": "../ParaInfo.Web.ApiModels/ParaInfo.Web.ApiModels.csproj",
       "msbuildProject": "../ParaInfo.Web.ApiModels/ParaInfo.Web.ApiModels.csproj"
+    },
+    "ParaInfo.Web.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../ParaInfo.Web.Infrastructure/ParaInfo.Web.Infrastructure.csproj",
+      "msbuildProject": "../ParaInfo.Web.Infrastructure/ParaInfo.Web.Infrastructure.csproj"
     },
     "Services/1.0.0": {
       "type": "project",

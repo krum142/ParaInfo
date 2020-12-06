@@ -8,9 +8,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Data\Parainfo.Data.csproj" />
-    <ProjectReference Include="..\ParaInfo.Web.Infrastructure\ParaInfo.Web.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>

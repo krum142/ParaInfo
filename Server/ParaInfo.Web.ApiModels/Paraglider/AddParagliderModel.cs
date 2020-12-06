@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Parainfo.Data.Models;
+using ParaInfo.Web.Infrastructure.ValidationAttributes;
 
 namespace ParaInfo.Web.ApiModels.Paraglider
 {
@@ -16,6 +17,7 @@ namespace ParaInfo.Web.ApiModels.Paraglider
         public string Model { get; set; }
 
         [Required]
+        [FileValidation]
         public IFormFile File { get; set; }
 
         public decimal Price { get; set; }

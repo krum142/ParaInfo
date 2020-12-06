@@ -30,11 +30,24 @@ export class MyValidators {
         });
     }
 
-    checkFile(control: FormControl):any{
+    checkFile(control: FormControl): any {
+        let validTypes = [
+            "image/apng", "image/bmp", "image/gif",
+            "image/jpeg", "image/png",]
+
         clearTimeout(this.debouncer);
-        this.debouncer = setTimeout(() => {
-            console.log(control.value)
-            if(control.value.type ){}
-        },50)
+        return new Promise(resolve => {
+            this.debouncer = setTimeout(() => {
+                console.log(!validTypes.includes(control.value.type));
+                if (!validTypes.includes(control.value.type)) {
+                    resolve({ "wrongFileType": true });
+                }
+                console.log(control.value.size > 2000000);
+                if (control.value.size > 2000000) {
+                    resolve({ "wrongFileSize": true });
+                }
+                resolve(null);
+            }, 500)
+        });
     }
 }

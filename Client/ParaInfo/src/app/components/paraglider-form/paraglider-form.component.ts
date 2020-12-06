@@ -27,7 +27,7 @@ export class ParagliderFormComponent implements OnInit {
     this.createParagliderForm = this.fb.group({
       'brand': this.brandName,
       'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, this.brandName)],
-      'file': ['', [Validators.required,this.myValidators.checkFile.bind(this.myValidators)]],
+      'file': ['', [Validators.required],this.myValidators.checkFile.bind(this.myValidators)],
       'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'sizes': this.fb.array([this.addSizeGroup()]),
     });
@@ -61,7 +61,9 @@ export class ParagliderFormComponent implements OnInit {
       'certification': ['', Validators.maxLength(30)],
     });
   }
-
+  log(x:any){
+    console.log(x);
+  }
   addArea() {
     return this.fb.group({
       'area': ['', [Validators.pattern("^[0-9]*$"), Validators.maxLength(30)]],
