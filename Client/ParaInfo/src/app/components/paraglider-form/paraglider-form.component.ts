@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { MyValidators } from 'src/app/services/MyValidators';
@@ -20,6 +20,7 @@ export class ParagliderFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     private myValidators: MyValidators,
     private formdataService: FormDataService,
     private paraService: ParagliderService) {
@@ -30,6 +31,7 @@ export class ParagliderFormComponent implements OnInit {
       'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, this.brandName)],
       'file': ['', [Validators.required], this.myValidators.checkFile.bind(this.myValidators)],
       'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
+      'description': ['', [Validators.maxLength(1000)]],
       'sizes': this.fb.array([this.addSizeGroup()]),
     });
 
@@ -42,10 +44,10 @@ export class ParagliderFormComponent implements OnInit {
     //   "sizes": [
     //     { "wingSize": "20","flat":{"area":"40"} },
     //      { "wingSize": "25" }]
-      
+
     // }
 
-    
+
 
     // this.createParagliderForm.controls['sizes'] = this.fb.array(x.sizes.map(size => {
     //   const group = this.addSizeGroup();
@@ -75,9 +77,6 @@ export class ParagliderFormComponent implements OnInit {
       'certification': ['', Validators.maxLength(30)],
     });
   }
-  log(x: any) {
-    console.log(x);
-  }
   addArea() {
     return this.fb.group({
       'area': ['', [Validators.pattern("^[0-9]*$"), Validators.maxLength(30)]],
@@ -97,12 +96,12 @@ export class ParagliderFormComponent implements OnInit {
   }
 
   createParaglider() {
-    console.log(this.createParagliderForm.controls.file.value.size);
-    if (this.createParagliderForm.status === "VALID" && this.createParagliderForm.controls.file.value.size) {
-      console.log(this.createParagliderForm.value);
+    if (this.createParagliderForm.status === "VALID") {
       let formData = new FormData;
       this.formdataService.convertJsontoFormData(this.createParagliderForm.value, null, formData);
-      this.paraService.create(formData).subscribe();
+      this.paraService.create(formData).subscribe(data => {
+        this.router.navigate([`/details/paraglider/${data.brand}/${data.model}`]);
+      });
     }
   }
 

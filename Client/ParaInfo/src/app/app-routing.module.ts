@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'brand/:brandName', component: BrandComponent },
   { path: 'brand/:brandName/:category', component: BrandComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'details/:type/:id', component: DetailsComponent},
-  { path: 'createBrand', component: CreateBrandComponent, canActivate: [AuthGuardService] },
-  { path: 'createParagliders/:brandName', component: CreateParagliderComponent, canActivate: [AuthGuardService]},
+  { path: 'details/:type/:brand/:model', component: DetailsComponent},
+  { path: 'createbrand', component: CreateBrandComponent, canActivate: [AuthGuardService] },
+  { path: 'createparaglider/:brandName', component: CreateParagliderComponent, canActivate: [AuthGuardService]},
   { path: '**', component: NoPageFoundComponent }
 
 ];

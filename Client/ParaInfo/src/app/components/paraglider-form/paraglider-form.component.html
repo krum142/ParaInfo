@@ -24,7 +24,7 @@
                     <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileType">Wrong Image Extension</span>
                     <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileSize">Max File Size 2Mb</span>
                     
-                    <span id="file-chosen" (click)="log(createParagliderForm.controls.file)" >{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
+                    <span id="file-chosen">{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
                     <!-- our custom upload button -->
                     <label class="file-label" for="actual-btn">Choose Img</label>
 
@@ -35,6 +35,10 @@
                         [ngClass]="{'input-err': createParagliderForm.controls.price.invalid && createParagliderForm.controls.price.touched}"
                         formControlName="price" maxlength="21">
                 </div>
+            </div>
+            <div class="description">
+                <label for="description">Description</label>
+                <textarea name="description" rows="10 "  maxlength="1000" formControlName="description"></textarea>
             </div>
             <div class="body" formArrayName="sizes">
                 <div class="groups">

@@ -1,11 +1,3 @@
-<p>details works!</p>
-
-
-
-<span [ngSwitch]="this.type">
-<app-paraglider-details *ngSwitchCase='"paraglider"'></app-paraglider-details>
-
-<p *ngSwitchDefault>
-default
-</p>
+<span [ngSwitch]="type">
+    <app-paraglider-details *ngSwitchCase='"paraglider"' [brand]="brand" [model]="model"></app-paraglider-details>
 </span>

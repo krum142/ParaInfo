@@ -1,14 +1,4 @@
-<section>
-    <img src="{{brand?.imageUrl}}">
-    <h1>{{brand?.name}}</h1>
-    <div class="closable-tab">
-        <h3 class="details">Details</h3>
-        <div class="to-hide" [ngClass]="{'hide': showDetails}">
-            <p> {{brand?.description}}</p>
-        </div>
-        <a (click)="toggleDetails()"><i class="fas" [ngClass]="showDetails ? 'fa-bars' : 'fa-times'" ></i></a>
-    </div>
-</section>
+<app-product-header [brandName]="brandName" ></app-product-header>
 <app-brand-categories [brandName]="brandName" [categoryName]="categoryName"></app-brand-categories>
 <app-load-brand-products [brandName]="brandName" [categoryName]="categoryName"></app-load-brand-products>
-<a routerLink="/create{{categoryName}}/{{brandName}}">Create {{categoryName}}</a>
+<a routerLink="/create{{categoryRouteName}}/{{brandName}}">Create {{categoryName}}</a>

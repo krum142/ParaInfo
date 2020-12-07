@@ -24,12 +24,14 @@ section ul li a{
     border-radius: 20px;
     border: 2px solid black;
     color: black;
+    text-transform: uppercase;
 }
 
 section ul li a:hover{
 
     background: black;
     color:white;
+
 }
 
 section ul li a.active{

@@ -11,6 +11,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brand: any;
   categoryName: string;
+  categoryRouteName:string = "";
   brandName: string;
   showDetails: boolean = true;
 
@@ -22,15 +23,13 @@ export class BrandComponent implements OnInit {
     this.brandName = this.route.snapshot.params.brandName;
     this.categoryName = this.route.snapshot.params.category;
     if(!this.categoryName){
-      this.categoryName = "Paragliders";
+      this.categoryName = "paragliders";
     }
     console.log(this.categoryName)
   }
 
   ngOnInit(): void {
-    this.brandService.getBrand(this.brandName).subscribe(data => {
-      this.brand = data;
-    });
+    this.categoryRouteName = GlobalConstants.categorys[this.categoryName];
     if (!this.categoryName) {
       this.categoryName = GlobalConstants.validCategoriePaths[0];
     }

@@ -42,7 +42,6 @@ export class MyValidators {
                 if (!validTypes.includes(control.value.type)) {
                     resolve({ "wrongFileType": true });
                 }
-                console.log(control.value.size > 2000000);
                 if (control.value.size > 2000000) {
                     resolve({ "wrongFileSize": true });
                 }

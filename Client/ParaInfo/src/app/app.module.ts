@@ -23,11 +23,12 @@ import { CreateParagliderComponent } from './components/create-paraglider/create
 import { ParagliderService } from './services/paraglider.service';
 import { FormDataService } from './services/form-data.service';
 import { ParagliderFormComponent } from './components/paraglider-form/paraglider-form.component';
-import { LoadBrandProductsComponent } from './components/load-brand-products/load-brand-products.component';
 import { MyValidators } from './services/MyValidators';
 import { GetProductsService } from './services/get-products.service';
 import { DetailsComponent } from './components/detailsComponents/details/details.component';
 import { ParagliderDetailsComponent } from './components/detailsComponents/templates/paraglider-details/paraglider-details.component';
+import { LoadBrandProductsComponent } from './components/brandComponents/load-brand-products/load-brand-products.component';
+import { ProductHeaderComponent } from './components/brandComponents/product-header/product-header.component';
 
 
 
@@ -48,6 +49,7 @@ import { ParagliderDetailsComponent } from './components/detailsComponents/templ
     LoadBrandProductsComponent,
     DetailsComponent,
     ParagliderDetailsComponent,
+    ProductHeaderComponent,
   ],
   imports: [
     BrowserModule,

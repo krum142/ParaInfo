@@ -30,7 +30,8 @@ namespace Services.Services.Data
             var projection = Builders<Paraglider>.Projection
                 .Include(p => p.Model)
                 .Include(x => x.ImgUrl)
-                .Include(x => x.Brand);
+                .Include(x => x.Brand)
+                .Include(x => x.Views);
 
             return await mongoDb.GetAllFilteredAsync(projection);
         }
@@ -51,7 +52,12 @@ namespace Services.Services.Data
 
         public async Task<Paraglider> GetByModelAndBrandAsync(string brand, string model)
         {
-            return await mongoDb.FindOneAsync(x => x.Model.ToLower() == model.ToLower() && x.Brand.ToLower() == brand.ToLower());
+
+
+            return await mongoDb
+                .FindOneAsync(x =>
+                    x.Model.ToLower() == model.ToLower() &&
+                    x.Brand.ToLower() == brand.ToLower());
         }
 
         public async Task<Paraglider> GetByModelAsync(string model)
@@ -71,6 +77,7 @@ namespace Services.Services.Data
                 Model = model.Model,
                 Price = model.Price,
                 Sizes = model.Sizes,
+                Description = model.Description,
                 ImgUrl = url.Url,
             };
             await mongoDb.InsertOneAsync(paraglider);

@@ -14,11 +14,13 @@ export class ErrorInterceptorService implements HttpInterceptor{
     return next.handle(request).pipe(
       //retry(1),
       catchError((err) => {
-        
+        console.log(err);
         switch (err.status) {
           case 404:
             this.router.navigate(['**'])
             break;
+          case 401:
+            this.router.navigate(['/login']);
         }
         return throwError(err);
       })

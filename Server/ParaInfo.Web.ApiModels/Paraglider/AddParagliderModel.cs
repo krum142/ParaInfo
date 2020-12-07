@@ -19,6 +19,8 @@ namespace ParaInfo.Web.ApiModels.Paraglider
         [Required]
         [FileValidation]
         public IFormFile File { get; set; }
+        [MaxLength(1000)]
+        public string Description { get; set; }
 
         public decimal Price { get; set; }
 

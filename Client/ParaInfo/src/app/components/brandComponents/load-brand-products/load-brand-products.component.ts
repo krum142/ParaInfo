@@ -11,17 +11,14 @@ export class LoadBrandProductsComponent implements OnInit {
 
   @Input() brandName: string = "";
   @Input() categoryName: string = "";
+  singleCategoryName: string = "";
   products: any;
   constructor(private productsService: GetProductsService) { }
 
   ngOnInit(): void {
-    this.productsService.getAll(GlobalConstants.categorys[this.categoryName],this.brandName).subscribe(data => {
-      console.log(data);
+    this.singleCategoryName = GlobalConstants.categorys[this.categoryName];
+    this.productsService.getAll(this.singleCategoryName,this.brandName).subscribe(data => {
       this.products = data;
     });
-  }
-
-  log(e:any){
-    console.log(e)
   }
 }

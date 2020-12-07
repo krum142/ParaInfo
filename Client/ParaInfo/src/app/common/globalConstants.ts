@@ -1,11 +1,11 @@
 export class GlobalConstants {
-    public static validCategoriePaths: Array<string> = ['Paragliders', 'Harnesses', 'Reserves', 'Bags', 'Accessoars'];
-    public static validDetailPaths: Array<string> = ['paraglider', 'Harness', 'Reserve', 'Bag', 'Accessoar'];
+    public static validCategoriePaths: Array<string> = ['paragliders', 'harnesses', 'reserves', 'bags', 'accessoars'];
+    public static validDetailPaths: Array<string> = ['paraglider', 'harness', 'reserve', 'bag', 'accessoar'];
     public static categorys: any = {
-        'Paragliders': 'Paraglider',
-        'Harnesses': 'Harness',
-        'Reserves': 'Reserve',
-        'Bags': 'Bag',
-        'Accessoars': 'Acessoar'
+        'paragliders': 'paraglider',
+        'harnesses': 'harness',
+        'reserves': 'reserve',
+        'bags': 'bag',
+        'accessoars': 'acessoar'
     };
 }

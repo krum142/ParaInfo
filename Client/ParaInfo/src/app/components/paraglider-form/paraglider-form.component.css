@@ -29,6 +29,29 @@ h1{
     padding: 20px;
 }
 
+.description{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 3px solid black;
+    font-size: 20px;
+    margin: 15px;
+    padding: 20px;
+}
+
+.description textarea{
+    min-width: 320px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 5px;
+    margin: 5px 0;
+    resize: none;
+}
+
 .body{
     display: flex;
     flex-wrap: wrap;

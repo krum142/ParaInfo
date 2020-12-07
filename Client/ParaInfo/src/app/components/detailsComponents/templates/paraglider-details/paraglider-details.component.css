@@ -1,0 +1,54 @@
+section{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.header {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header h2{
+    font-size: 45px;
+    text-align: center;
+}
+
+.header img{
+    width: 400px;
+    min-width: 300px;
+    border-radius: 5px;
+    max-height: 400px;
+    min-height: 300px;
+    object-fit: cover;
+}
+
+section .description{
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 20px;
+}
+
+section .description h3{
+    float: left;
+}
+section .description a{
+    margin: 2px 0 0 0;
+    float: right;
+}
+
+.to-hide{
+    display: inline-block;
+
+}
+
+.hide{
+    display: none;
+}

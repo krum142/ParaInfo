@@ -10,19 +10,20 @@ import { GetProductsService } from 'src/app/services/get-products.service';
 })
 export class DetailsComponent implements OnInit {
   type: string = "";
-  id: string = "";
+  brand: string = "";
+  model: any;
+  product:any;
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private productsService:GetProductsService) {
+    private router: Router) {
   }
   ngOnInit(): void {
     this.type = this.route.snapshot.params.type;
-    this.id = this.route.snapshot.params.id;
+    this.brand = this.route.snapshot.params.brand;
+    this.model = this.route.snapshot.params.model;
     if (!GlobalConstants.validDetailPaths.includes(this.type.toLowerCase())) {
       this.router.navigate(['**']);
     }
-    //let product = this.productsService.getOne()
   }
 
 }

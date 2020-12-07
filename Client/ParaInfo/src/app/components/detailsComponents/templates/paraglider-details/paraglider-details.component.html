@@ -1,1 +1,20 @@
-<p>paraglider-details works!</p>
+<app-product-header [brandName]="paraglider.brand"></app-product-header>
+
+<section>
+    <article class="header">
+        <div class="details">
+            <h2>Model: {{paraglider.model}}</h2>
+        </div>
+        <img src="{{paraglider.imgUrl}}" alt="">
+    </article>
+    <article class="description">
+        <h3>Description</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDescription}">
+            <p> {{paraglider.description}}</p>
+        </div>
+        <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'" ></i></a>
+    </article>
+    <body>
+
+    </body>
+</section>

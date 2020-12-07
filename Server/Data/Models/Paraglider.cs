@@ -22,6 +22,10 @@ namespace Parainfo.Data.Models
         public decimal Price  { get; set; }
         [Required]
         public string ImgUrl { get; set; }
+        [MaxLength(1000)]
+        public string Description { get; set; }
+
+        public int Views { get; set; }
 
         public IEnumerable<Size> Sizes { get; set; }
     }
