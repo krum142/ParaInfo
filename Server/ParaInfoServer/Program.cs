@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace ParaInfoServer.Web
+namespace ParaInfo.Web
 {
     public class Program
     {

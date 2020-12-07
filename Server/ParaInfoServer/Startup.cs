@@ -16,7 +16,7 @@ using Services.Services;
 using Services.Services.Data;
 using Services.Services.Data.Interfaces;
 
-namespace ParaInfoServer.Web
+namespace ParaInfo.Web
 {
     public class Startup
     {

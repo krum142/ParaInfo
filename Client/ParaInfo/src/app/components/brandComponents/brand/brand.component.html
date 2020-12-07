@@ -9,6 +9,6 @@
         <a (click)="toggleDetails()"><i class="fas" [ngClass]="showDetails ? 'fa-bars' : 'fa-times'" ></i></a>
     </div>
 </section>
-<app-brand-categories [brandName]="brandName" [categoryName]="categoryName" [categories]="categories"></app-brand-categories>
+<app-brand-categories [brandName]="brandName" [categoryName]="categoryName"></app-brand-categories>
 <app-load-brand-products [brandName]="brandName" [categoryName]="categoryName"></app-load-brand-products>
 <a routerLink="/create{{categoryName}}/{{brandName}}">Create {{categoryName}}</a>

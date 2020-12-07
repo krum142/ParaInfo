@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/globalConstants';
 
 @Component({
   selector: 'app-brand-categories',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class BrandCategoriesComponent implements OnInit {
   @Input() brandName: string = "";
   @Input() categoryName: string = "";
-  @Input() categories = new Array<string>();
+  categories = GlobalConstants.validCategoriePaths;
   @Output() page: Number = 0;
   constructor(private router: Router) {
 

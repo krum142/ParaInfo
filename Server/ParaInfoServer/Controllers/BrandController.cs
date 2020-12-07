@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Parainfo.Data.Models;
 using Services.Services.Data.Interfaces;
 
-namespace ParaInfoServer.Web.Controllers
+namespace ParaInfo.Web.Controllers
 {
     public class BrandController : ApiController
     {

@@ -26,6 +26,8 @@ import { ParagliderFormComponent } from './components/paraglider-form/paraglider
 import { LoadBrandProductsComponent } from './components/load-brand-products/load-brand-products.component';
 import { MyValidators } from './services/MyValidators';
 import { GetProductsService } from './services/get-products.service';
+import { DetailsComponent } from './components/detailsComponents/details/details.component';
+import { ParagliderDetailsComponent } from './components/detailsComponents/templates/paraglider-details/paraglider-details.component';
 
 
 
@@ -44,6 +46,8 @@ import { GetProductsService } from './services/get-products.service';
     BrandCategoriesComponent,
     ParagliderFormComponent,
     LoadBrandProductsComponent,
+    DetailsComponent,
+    ParagliderDetailsComponent,
   ],
   imports: [
     BrowserModule,

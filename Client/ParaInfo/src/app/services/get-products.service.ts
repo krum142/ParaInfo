@@ -8,19 +8,14 @@ import { environment } from 'src/environments/environment';
 })
 export class GetProductsService {
   Path = environment.apiUrl;
-  categoryPath: any =
-    {
-      'Paragliders': 'Paraglider',
-      'Harnesses': 'Harness',
-      'Reserves': 'Reserve',
-      'Bags': 'Bag',
-      'Accessoars': 'Acessoar'
-    }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
+  getAll(type: string, brand: string): Observable<any> {
+    return this.http.get(`${this.Path}${type}/${brand}`);
+  }
 
-
-  getAll(category: string,brand:string): Observable<any> {
-    return this.http.get(`${this.Path}${this.categoryPath[category]}/${brand}`);
+  getOne(type: string, brand: string, model: string): Observable<any> {
+    return this.http.get(`${this.Path}${type}/${brand}/${model}`);
   }
 }

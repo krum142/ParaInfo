@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/globalConstants';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -12,7 +13,6 @@ export class BrandComponent implements OnInit {
   categoryName: string;
   brandName: string;
   showDetails: boolean = true;
-  categories: Array<string> = ['Paragliders', 'Harnesses', 'Reserves', 'Bags', 'Accessoars'];
 
   constructor(
     private route: ActivatedRoute,
@@ -31,11 +31,10 @@ export class BrandComponent implements OnInit {
     this.brandService.getBrand(this.brandName).subscribe(data => {
       this.brand = data;
     });
-
     if (!this.categoryName) {
-      this.categoryName = this.categories[0];
+      this.categoryName = GlobalConstants.validCategoriePaths[0];
     }
-    else if (!this.categories.includes(this.categoryName)) {
+    else if (!GlobalConstants.validCategoriePaths.includes(this.categoryName)) {
       this.router.navigate(['**']);
     }
   }

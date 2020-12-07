@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ParaInfoServer.Web.Controllers
+namespace ParaInfo.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]

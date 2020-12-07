@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ParaInfoServer.Web.Documents
+namespace ParaInfo.Web.Documents
 {
     public interface IDocument
     {

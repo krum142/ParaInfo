@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Parainfo.Data.Models.Identity;
 
-namespace ParaInfoServer.Web.Controllers
+namespace ParaInfo.Web.Controllers
 {
     public class IdentityController : ApiController
     {

@@ -1,4 +1,4 @@
-﻿namespace ParaInfoServer.Web.Settings
+﻿namespace ParaInfo.Web.Settings
 {
     public interface IMongoDbSettings
     {

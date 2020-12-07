@@ -5,7 +5,7 @@ using Parainfo.Data.Models;
 using ParaInfo.Web.ApiModels.Paraglider;
 using Services.Services.Data.Interfaces;
 
-namespace ParaInfoServer.Web.Controllers
+namespace ParaInfo.Web.Controllers
 {
     public class ParagliderController : ApiController
     {
@@ -21,6 +21,7 @@ namespace ParaInfoServer.Web.Controllers
         {
             return Json(await paragliderService.GetAllFilteredAsync());
         }
+
 
         [HttpGet("{brand}")]
         public async Task<IActionResult> Get(string brand)

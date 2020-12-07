@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GlobalConstants } from 'src/app/common/globalConstants';
 import { GetProductsService } from 'src/app/services/get-products.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoadBrandProductsComponent implements OnInit {
   constructor(private productsService: GetProductsService) { }
 
   ngOnInit(): void {
-    this.productsService.getAll(this.categoryName,this.brandName).subscribe(data => {
+    this.productsService.getAll(GlobalConstants.categorys[this.categoryName],this.brandName).subscribe(data => {
       console.log(data);
       this.products = data;
     });

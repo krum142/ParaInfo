@@ -1,4 +1,4 @@
-﻿namespace ParaInfoServer.Web
+﻿namespace ParaInfo.Web
 {
     public class AppSettings
     {

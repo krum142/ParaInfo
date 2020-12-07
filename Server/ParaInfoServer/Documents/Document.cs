@@ -1,7 +1,7 @@
 ﻿using System;
 using MongoDB.Bson;
 
-namespace ParaInfoServer.Web.Documents
+namespace ParaInfo.Web.Documents
 {
     public abstract class Document : IDocument
     {
