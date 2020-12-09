@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
-  selector: 'app-create-brand',
-  templateUrl: './create-brand.component.html',
-  styleUrls: ['./create-brand.component.css']
+  selector: 'app-brand-form',
+  templateUrl: './brand-form.component.html',
+  styleUrls: ['./brand-form.component.css']
 })
-export class CreateBrandComponent implements OnInit {
+export class BrandFormComponent implements OnInit {
   createBrandForm: FormGroup;
   constructor(
     private brandService: BrandService,

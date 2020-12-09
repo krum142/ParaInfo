@@ -28,7 +28,7 @@ namespace Services.Services.Data
 
         public async Task<Brand> GetByNameAsync(string name)
         {
-            return await mongoDb.FindOneAsync(x => x.Name == name);
+            return await mongoDb.FindOneAsync(x => x.Name.ToLower() == name.ToLower());
         }
 
         public async Task<Brand> CreateAsync(Brand customer)

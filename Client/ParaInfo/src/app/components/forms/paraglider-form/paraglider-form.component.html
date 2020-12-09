@@ -17,15 +17,17 @@
                         type="text" formControlName="model" maxlength="31">
                 </div>
                 <div class="file-container">
-                    <input class="file-input" id="actual-btn" (change)="onFileChange($event)" type="file" formControlName="file" hidden accept=".png, .jpg, .jpeg, .gif">
-                    
-                    <!-- name of file chosen -->
-                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.required">Img Is Required</span>
-                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileType">Wrong Image Extension</span>
-                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileSize">Max File Size 2Mb</span>
-                    
+                    <input class="file-input" id="actual-btn" (change)="onFileChange($event)" type="file"
+                        formControlName="file" hidden accept=".png, .jpg, .jpeg, .gif">
+
+                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.required">Img Is
+                        Required</span>
+                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileType">Wrong
+                        Image Extension</span>
+                    <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.wrongFileSize">Max File
+                        Size 2Mb</span>
+
                     <span id="file-chosen">{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
-                    <!-- our custom upload button -->
                     <label class="file-label" for="actual-btn">Choose Img</label>
 
                 </div>
@@ -38,7 +40,7 @@
             </div>
             <div class="description">
                 <label for="description">Description</label>
-                <textarea name="description" rows="10 "  maxlength="1000" formControlName="description"></textarea>
+                <textarea name="description" rows="10 " maxlength="1000" formControlName="description"></textarea>
             </div>
             <div class="body" formArrayName="sizes">
                 <div class="groups">
@@ -238,7 +240,13 @@
                 </div>
                 <button class="add-button" (click)="addSize()"><i class="fas fa-plus-circle"></i></button>
             </div>
-            <button class="submit-button" (click)="createParaglider()">Create Paraglider</button>
+            <ng-container *ngIf="edit; else elseTemplate">
+                <button class="submit-button" (click)="updateParaglider()">Update Paraglider</button>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <button class="submit-button" (click)="createParaglider()">Create Paraglider</button>
+            </ng-template>
+
         </form>
     </article>
 

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Paraglider } from 'src/app/models/Paraglider';
 import { GetProductsService } from 'src/app/services/get-products.service';
 
 @Component({
@@ -11,16 +10,23 @@ export class ParagliderDetailsComponent implements OnInit {
   @Input() brand: string = "";
   @Input() model: string = "";
   showDescription:boolean = true;
-  paraglider:any;
+  paraglider: any
   constructor(private productsService:GetProductsService) {
    }
 
   ngOnInit(): void {
     this.productsService.getOne("paraglider",this.brand,this.model).subscribe(data => {
       this.paraglider = data;
+      console.log(data);
     })
   }
+  isArray(x:any){
+    return x instanceof Array;
+  }
 
+  log(x:any){
+    console.log(x);
+  }
   toggleDescription() {
     this.showDescription = !this.showDescription
   }

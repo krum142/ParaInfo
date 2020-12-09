@@ -1,0 +1,70 @@
+<section *ngIf="paraglider">
+    <article class="header">
+        <div class="details">
+            <h2>Model: {{paraglider.model}}</h2>
+            <img src="{{paraglider.imgUrl}}" alt="">
+        </div>
+        <div>
+            <button routerLink="/edit/paraglider/{{paraglider?.brand}}/{{paraglider?.model}}" class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </div>
+    </article>
+    <article class="description">
+        <h3>Description</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDescription}">
+            <p> {{paraglider.description}}</p>
+        </div>
+        <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'"></i></a>
+    </article>
+
+    <body>
+        <article class="table">
+            <ul class="header-table">
+                <li>Price</li>
+                <li>WingSize</li>
+                <li>Flat Area</li>
+                <li>Flat Span</li>
+                <li>Flat AspectRatio</li>
+                <li>Proj Area</li>
+                <li>Proj Span</li>
+                <li>Proj AspectRatio</li>
+                <li>Flattening</li>
+                <li>UpperSurface</li>
+                <li>UnderSurface</li>
+                <li>NumberCells</li>
+                <li>Weight</li>
+                <li>Risers</li>
+                <li>NakedPilot</li>
+                <li>InflightWeight</li>
+                <li>WingLoading</li>
+                <li>TrimSpeed</li>
+                <li>MaxSpeed</li>
+                <li>MinSinkRate</li>
+                <li>Certification</li>
+            </ul>
+            <ul class="main-table" *ngFor="let item of paraglider.sizes">
+                <li>{{paraglider?.price || "-"}}</li>
+                <li>{{item?.wingSize || "-"}}</li>
+                <li>{{item?.flat?.area || "-"}}</li>
+                <li>{{item?.flat?.span || "-"}}</li>
+                <li>{{item?.flat?.aspectRatio || "-"}}</li>
+                <li>{{item?.proj?.area || "-"}}</li>
+                <li>{{item?.proj?.span || "-"}}</li>
+                <li>{{item?.proj?.aspectRatio || "-"}}</li>
+                <li>{{item?.flattening || "-"}}</li>
+                <li>{{item?.upperSurface || "-"}}</li>
+                <li>{{item?.underSurface || "-"}}</li>
+                <li>{{item?.numberCells || "-"}}</li>
+                <li>{{item?.weight || "-"}}</li>
+                <li>{{item?.risers || "-"}}</li>
+                <li>{{item?.nakedPilot || "-"}}</li>
+                <li>{{item?.inflightWeight || "-"}}</li>
+                <li>{{item?.wingLoading || "-"}}</li>
+                <li>{{item?.trimSpeed || "-"}}</li>
+                <li>{{item?.maxSpeed || "-"}}</li>
+                <li>{{item?.minSinkRate || "-"}}</li>
+                <li>{{item?.certification || "-"}}</li>
+            </ul>
+        </article>
+    </body>
+</section>

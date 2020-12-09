@@ -1,0 +1,5 @@
+<span [ngSwitch]="type">
+    <app-paraglider-form *ngSwitchCase="'paraglider'" [brandName]="brandName"></app-paraglider-form>
+    <app-brand-form *ngSwitchCase="'brand'"></app-brand-form>
+    <app-no-page-found  *ngSwitchDefault></app-no-page-found>
+</span>

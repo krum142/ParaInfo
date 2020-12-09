@@ -5,8 +5,9 @@ export interface Paraglider {
     id: string;
     brand: string;
     model: string;
-    imageUrl: string;
+    imgUrl: string;
     description: string;
+    price:string;
     views:number;
     sizes:Array<Sizes>
 }

@@ -55,9 +55,14 @@ namespace ParaInfo.Web.Controllers
 
         [HttpPut]
         [Authorize]
-        public async Task<IActionResult> Put(Paraglider input)
+        public async Task<IActionResult> Put([FromForm]UpdateParagliderModel input)
         {
-            return Json(await paragliderService.UpdateAsync(input));
+            var result =await paragliderService.UpdateAsync(input);
+            if (result == null)
+            {
+                return Json(new { });
+            }
+            return Json(result);
         }
 
         [Authorize]

@@ -1,0 +1,8 @@
+<span [ngSwitch]="type.toLowerCase()">
+
+<app-paraglider-form *ngSwitchCase="'paraglider'" [brandName]="brand" [editModel]="model" [edit]="true"></app-paraglider-form>
+
+<p *ngSwitchDefault>
+    default
+</p>
+</span>

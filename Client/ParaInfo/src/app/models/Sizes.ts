@@ -1,6 +1,7 @@
 import { Areas } from './Areas';
 
 export interface Sizes {
+    [x: string]: any;
     id: string;
     wingSize:string;
     flat:Areas;

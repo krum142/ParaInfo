@@ -23,7 +23,7 @@ namespace Services.Services.Data.Interfaces
 
         public Task<Paraglider> GetByModelAsync(string name);
 
-        public Task<Paraglider> UpdateAsync(Paraglider customer);
+        public Task<Paraglider> UpdateAsync(UpdateParagliderModel model);
 
         public Task<Paraglider> DeleteAsync(string id);
     }

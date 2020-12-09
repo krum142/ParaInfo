@@ -16,19 +16,20 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 
 import { NoPageFoundComponent } from './components/no-page-found/no-page-found.component';
-import { CreateBrandComponent } from './components/brandComponents/create-brand/create-brand.component';
 import { BrandComponent } from './components/brandComponents/brand/brand.component';
 import { BrandCategoriesComponent } from './components/brandComponents/brand-categories/brand-categories.component';
-import { CreateParagliderComponent } from './components/create-paraglider/create-paraglider.component';
 import { ParagliderService } from './services/paraglider.service';
 import { FormDataService } from './services/form-data.service';
-import { ParagliderFormComponent } from './components/paraglider-form/paraglider-form.component';
 import { MyValidators } from './services/MyValidators';
 import { GetProductsService } from './services/get-products.service';
 import { DetailsComponent } from './components/detailsComponents/details/details.component';
-import { ParagliderDetailsComponent } from './components/detailsComponents/templates/paraglider-details/paraglider-details.component';
+import { ParagliderDetailsComponent } from './components/detailsComponents/paraglider-details/paraglider-details.component';
 import { LoadBrandProductsComponent } from './components/brandComponents/load-brand-products/load-brand-products.component';
 import { ProductHeaderComponent } from './components/brandComponents/product-header/product-header.component';
+import { CreateComponent } from './components/create/create.component';
+import { ParagliderFormComponent } from './components/forms/paraglider-form/paraglider-form.component';
+import { BrandFormComponent } from './components/forms/brand-form/brand-form.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 
@@ -40,8 +41,6 @@ import { ProductHeaderComponent } from './components/brandComponents/product-hea
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    CreateParagliderComponent,
-    CreateBrandComponent,
     BrandComponent,
     NoPageFoundComponent,
     BrandCategoriesComponent,
@@ -50,6 +49,9 @@ import { ProductHeaderComponent } from './components/brandComponents/product-hea
     DetailsComponent,
     ParagliderDetailsComponent,
     ProductHeaderComponent,
+    CreateComponent,
+    BrandFormComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

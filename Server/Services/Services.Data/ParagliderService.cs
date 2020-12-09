@@ -43,7 +43,7 @@ namespace Services.Services.Data
                 .Include(x => x.ImgUrl)
                 .Include(x => x.Brand);
 
-            return await mongoDb.GetAllFilteredByBrandAsync(x => x.Brand == brand,projection);
+            return await mongoDb.GetAllFilteredByBrandAsync(x => x.Brand == brand, projection);
         }
         public async Task<Paraglider> GetByIdAsync(string id)
         {
@@ -52,12 +52,16 @@ namespace Services.Services.Data
 
         public async Task<Paraglider> GetByModelAndBrandAsync(string brand, string model)
         {
-
-
-            return await mongoDb
+            var paraglider = await mongoDb
                 .FindOneAsync(x =>
                     x.Model.ToLower() == model.ToLower() &&
                     x.Brand.ToLower() == brand.ToLower());
+
+            if (paraglider == null) return paraglider;
+
+            paraglider.Views++;
+            await mongoDb.ReplaceOneAsync(paraglider);
+            return paraglider;
         }
 
         public async Task<Paraglider> GetByModelAsync(string model)
@@ -67,7 +71,10 @@ namespace Services.Services.Data
 
         public async Task<Paraglider> CreateAsync(AddParagliderModel model)
         {
-            if (await GetByModelAndBrandAsync(model.Brand, model.Model) != null) return null;
+            if (await GetByModelAndBrandAsync(model.Brand, model.Model) != null)
+            {
+                return null;
+            }
 
             var url = await cloudinaryService.UploadImageAsync(model.File);
 
@@ -84,9 +91,26 @@ namespace Services.Services.Data
             return paraglider;
 
         }
-        public async Task<Paraglider> UpdateAsync(Paraglider customer)
+        public async Task<Paraglider> UpdateAsync(UpdateParagliderModel model)
         {
-            return await mongoDb.ReplaceOneAsync(customer);
+            var oldParaglider = await GetByIdAsync(model.Id);
+            var paraglider = new Paraglider
+            {
+                Id = model.Id,
+                Brand = model.Brand,
+                Model = model.Model,
+                Price = model.Price,
+                Sizes = model.Sizes,
+                ImgUrl = oldParaglider.ImgUrl,
+                Description = model.Description
+            };
+
+            if (model.File != null)
+            {
+                var url = await cloudinaryService.UploadImageAsync(model.File);
+                paraglider.ImgUrl = url.Url;
+            }
+            return await mongoDb.ReplaceOneAsync(paraglider);
         }
         public async Task<Paraglider> DeleteAsync(string id)
         {

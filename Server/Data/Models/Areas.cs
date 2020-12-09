@@ -1,11 +1,14 @@
-﻿namespace Parainfo.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Parainfo.Data.Models
 {
     public class Areas
     {
-        public double? Area { get; set; }
-
-        public double? Span { get; set; }
-
-        public double? AspectRatio { get; set; }
+        [MaxLength(20)]
+        public string Area { get; set; }
+        [MaxLength(20)]
+        public string Span { get; set; }
+        [MaxLength(20)]
+        public string AspectRatio { get; set; }
     }
 }

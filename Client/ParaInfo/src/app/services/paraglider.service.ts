@@ -12,8 +12,11 @@ export class ParagliderService {
   constructor(private http: HttpClient) { }
 
   create(data: FormData): Observable<Paraglider> {
-    let headers = new HttpHeaders()
     return this.http.post<Paraglider>(this.Path, data);
+  }
+
+  update(data: FormData): Observable<Paraglider> {
+    return this.http.put<Paraglider>(this.Path, data);
   }
 
   getModel(brand: string, model: string): Observable<Paraglider> {

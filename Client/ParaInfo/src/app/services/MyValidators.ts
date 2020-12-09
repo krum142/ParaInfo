@@ -10,18 +10,27 @@ export class MyValidators {
     constructor(public paraService: ParagliderService) {
 
     }
-    checkModel(brand: string, control: FormControl): any {
+    checkModel(brand: string, actualModel: string, edit: boolean, control: FormControl): any {
         clearTimeout(this.debouncer);
-
         return new Promise(resolve => {
             this.debouncer = setTimeout(() => {
                 this.paraService.getModel(brand, control.value).subscribe((res) => {
-                    if (res.model && res.model.toLowerCase() === control.value.toLowerCase()) {
-                        resolve({ 'modelAlreadyExists': true });
+
+                    let inputModel = control.value.toLowerCase();
+                    let resultModel = res.model?.toLowerCase();
+
+                    if (edit) {
+                        actualModel = actualModel.toLowerCase();
+                        if (inputModel !== actualModel && inputModel === resultModel) {
+                            resolve({ 'modelAlreadyExists': true });
+                        }
                     }
                     else {
-                        resolve(null);
+                        if (resultModel && res.model.toLowerCase() === control.value.toLowerCase()) {
+                            resolve({ 'modelAlreadyExists': true });
+                        }
                     }
+                    resolve(null);
                 }, (err) => {
                     resolve({ 'modelAlreadyExists': true });
                 });
@@ -37,6 +46,9 @@ export class MyValidators {
 
         clearTimeout(this.debouncer);
         return new Promise(resolve => {
+            if(!control.value){
+                resolve(null);
+            }
             this.debouncer = setTimeout(() => {
                 //console.log(!validTypes.includes(control.value.type));
                 if (!validTypes.includes(control.value.type)) {

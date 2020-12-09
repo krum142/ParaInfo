@@ -24,11 +24,10 @@ namespace Parainfo.Data.Common.Repositories
 
         private protected string GetCollectionName(Type documentType)
         {
-            var z = ((BsonCollectionAttribute)documentType.GetCustomAttributes(
+            return ((BsonCollectionAttribute)documentType.GetCustomAttributes(
                     typeof(BsonCollectionAttribute),
                     true)
                 .FirstOrDefault())?.CollectionName;
-            return z;
         }
 
         public virtual IQueryable<T> AsQueryable()
@@ -124,8 +123,7 @@ namespace Parainfo.Data.Common.Repositories
             {
                 ReturnDocument = ReturnDocument.After
             };
-            var z = await _collection.FindOneAndReplaceAsync<T>(u => u.Id == document.Id, document, options);
-            return z;
+            return await _collection.FindOneAndReplaceAsync<T>(x => x.Id == document.Id, document, options);
         }
 
         public void DeleteOne(Expression<Func<T, bool>> filterExpression)
