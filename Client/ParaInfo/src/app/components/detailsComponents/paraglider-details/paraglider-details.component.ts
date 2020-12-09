@@ -17,16 +17,16 @@ export class ParagliderDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getOne("paraglider",this.brand,this.model).subscribe(data => {
       this.paraglider = data;
-      console.log(data);
     })
   }
   isArray(x:any){
     return x instanceof Array;
   }
 
-  log(x:any){
-    console.log(x);
+  deleteParaglider(){
+
   }
+
   toggleDescription() {
     this.showDescription = !this.showDescription
   }

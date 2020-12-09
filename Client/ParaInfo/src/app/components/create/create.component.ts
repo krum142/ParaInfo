@@ -23,9 +23,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.type = this.route.snapshot.params.type;
     this.brandName = this.route.snapshot.params.brandName;
-    console.log(this.type)
     if(!GlobalConstants.validCreateType.includes(this.type)){
-      console.log(this.type)
       this.brandService.getBrand(this.brandName).subscribe(res => { }, err => {
         this.router.navigate(['**']);
       })

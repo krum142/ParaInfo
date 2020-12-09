@@ -17,8 +17,7 @@
                         type="text" formControlName="model" maxlength="31">
                 </div>
                 <div class="file-container">
-                    <input class="file-input" id="actual-btn" (change)="onFileChange($event)" type="file"
-                        formControlName="file" hidden accept=".png, .jpg, .jpeg, .gif">
+                    <input class="file-input" id="actual-btn-file" (change)="onFileChange($event)" type="file" hidden accept=".png, .jpg, .jpeg, .gif">
 
                     <span class="span-error" *ngIf="createParagliderForm.controls.file?.errors?.required">Img Is
                         Required</span>
@@ -28,7 +27,7 @@
                         Size 2Mb</span>
 
                     <span id="file-chosen">{{createParagliderForm.controls.file.value.name || "File Name" }}</span>
-                    <label class="file-label" for="actual-btn">Choose Img</label>
+                    <label class="file-label" for="actual-btn-file">Choose Img</label>
 
                 </div>
                 <div class="item-container">

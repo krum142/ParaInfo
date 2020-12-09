@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
       'confirm-password': ['', [Validators.required]]
     });
 
-    console.log(this.registerForm.value);
   }
 
   ngOnInit(): void {
@@ -32,9 +31,7 @@ export class RegisterComponent implements OnInit {
       this.registerForm.status === "VALID") {
 
       delete this.registerForm.value['confirm-password'];
-      console.log(this.registerForm.value)
-      this.auth.register(this.registerForm.value).subscribe((data) => { }, error => {
-        console.log(error);        
+      this.auth.register(this.registerForm.value).subscribe((data) => { }, error => {       
       });
     }
   }

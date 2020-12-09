@@ -25,7 +25,6 @@ export class BrandComponent implements OnInit {
     if(!this.categoryName){
       this.categoryName = "paragliders";
     }
-    console.log(this.categoryName)
   }
 
   ngOnInit(): void {

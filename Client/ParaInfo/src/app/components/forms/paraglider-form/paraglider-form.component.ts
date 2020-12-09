@@ -34,7 +34,7 @@ export class ParagliderFormComponent implements OnInit {
       'id': [''],
       'brand': this.brandName,
       'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, this.brandName, this.editModel, this.edit)],
-      'file': ['', this.edit ? [] : Validators.required, this.myValidators.checkFile.bind(this.myValidators)],
+      'file': ['', !this.edit ? Validators.required : [], this.myValidators.checkFile.bind(this.myValidators)],
       'price': ['', [Validators.required, Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'description': ['', [Validators.maxLength(1000)]],
       'sizes': this.fb.array(this.edit ? [] : [this.addSizeGroup()]),
@@ -95,6 +95,8 @@ export class ParagliderFormComponent implements OnInit {
       this.createParagliderForm.controls.file.patchValue(event.target.files[0]);
     }
   }
+
+
 
   getControl(group: any, property: string) {
     return group.controls[property];
