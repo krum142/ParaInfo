@@ -30,6 +30,9 @@ import { CreateComponent } from './components/create/create.component';
 import { ParagliderFormComponent } from './components/forms/paraglider-form/paraglider-form.component';
 import { BrandFormComponent } from './components/forms/brand-form/brand-form.component';
 import { EditComponent } from './components/edit/edit.component';
+import { HarnessFormComponent } from './components/forms/harness-form/harness-form.component';
+import { HarnessService } from './services/harness.service';
+import { HarnessDetailsComponent } from './components/detailsComponents/harness-details/harness-details.component';
 
 
 
@@ -52,6 +55,8 @@ import { EditComponent } from './components/edit/edit.component';
     CreateComponent,
     BrandFormComponent,
     EditComponent,
+    HarnessFormComponent,
+    HarnessDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { EditComponent } from './components/edit/edit.component';
   providers: [
     AuthService,
     ParagliderService,
+    HarnessService,
     FormDataService,
     GetProductsService,
     BrandService,

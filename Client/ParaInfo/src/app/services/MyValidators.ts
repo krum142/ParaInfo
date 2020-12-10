@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { GetProductsService } from './get-products.service';
 import { ParagliderService } from './paraglider.service';
 
 @Injectable()
@@ -7,14 +8,16 @@ export class MyValidators {
 
     debouncer: any;
 
-    constructor(public paraService: ParagliderService) {
+    constructor(
+        public paraService: ParagliderService,
+        private productsService: GetProductsService) {
 
     }
-    checkModel(brand: string, actualModel: string, edit: boolean, control: FormControl): any {
+    checkModel(type:string, brand: string, actualModel: string, edit: boolean, control: FormControl): any {
         clearTimeout(this.debouncer);
         return new Promise(resolve => {
             this.debouncer = setTimeout(() => {
-                this.paraService.getModel(brand, control.value).subscribe((res) => {
+                this.productsService.getOne(type, brand, control.value).subscribe((res) => {
 
                     let inputModel = control.value.toLowerCase();
                     let resultModel = res.model?.toLowerCase();

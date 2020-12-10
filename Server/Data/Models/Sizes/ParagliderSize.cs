@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Parainfo.Data.Models
+namespace Parainfo.Data.Models.Sizes
 {
-    public class Size
+    public class ParagliderSize
     {
         [MaxLength(20)]
         public string WingSize { get; set; }

@@ -19,6 +19,10 @@ export class ParagliderService {
     return this.http.put<Paraglider>(this.Path, data);
   }
 
+  delete(id:string): Observable<Paraglider>{
+    return this.http.delete<Paraglider>(`${this.Path}/${id}`);
+  }
+
   getModel(brand: string, model: string): Observable<Paraglider> {
     if (brand && model) {
       return this.http.get<Paraglider>(`${this.Path}/${brand}/${model}`);

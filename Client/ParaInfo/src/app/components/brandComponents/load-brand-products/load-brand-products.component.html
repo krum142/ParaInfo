@@ -1,5 +1,5 @@
 <section>
-    <div *ngIf="products === undefined || products.length < 1">
+    <div *ngIf="!products">
         <h1>No {{categoryName}} Found</h1>
     </div>
     <div class="card" *ngFor="let product of products"  routerLink="/details/{{singleCategoryName}}/{{product?.brand}}/{{product?.model}}">

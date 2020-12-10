@@ -66,10 +66,10 @@ namespace ParaInfo.Web.Controllers
         }
 
         [Authorize]
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Paraglider input)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
         {
-            return Json(await paragliderService.DeleteAsync(input.Id));
+            return Json(await paragliderService.DeleteAsync(id));
         }
     }
 }

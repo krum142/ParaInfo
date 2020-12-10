@@ -23,19 +23,16 @@ export class ParagliderFormComponent implements OnInit {
     private myValidators: MyValidators,
     private formdataService: FormDataService,
     private paraService: ParagliderService) {
-
     this.brandName = this.route.snapshot.params.brandName;
-
-
   }
 
   ngOnInit(): void {
     this.createParagliderForm = this.fb.group({
       'id': [''],
       'brand': this.brandName,
-      'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, this.brandName, this.editModel, this.edit)],
+      'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators,'paraglider', this.brandName, this.editModel, this.edit)],
       'file': ['', !this.edit ? Validators.required : [], this.myValidators.checkFile.bind(this.myValidators)],
-      'price': ['', [Validators.required, Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
+      'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'description': ['', [Validators.maxLength(1000)]],
       'sizes': this.fb.array(this.edit ? [] : [this.addSizeGroup()]),
     });

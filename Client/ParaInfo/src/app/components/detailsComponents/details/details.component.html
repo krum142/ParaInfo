@@ -1,4 +1,5 @@
 <app-product-header [brandName]="brand"></app-product-header>
 <span [ngSwitch]="type.toLowerCase()">
     <app-paraglider-details *ngSwitchCase='"paraglider"' [brand]="brand" [model]="model"></app-paraglider-details>
+    <app-harness-details *ngSwitchCase='"harness"' [brand]="brand" [model]="model"></app-harness-details>
 </span>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Parainfo.Data.Common.Attributes;
 using Parainfo.Data.Common.Models;
+using Parainfo.Data.Models.Sizes;
 
 namespace Parainfo.Data.Models
 {
@@ -19,7 +20,7 @@ namespace Parainfo.Data.Models
         [Required]
         public string Model { get; set; }
 
-        public decimal Price  { get; set; }
+        public decimal? Price  { get; set; }
         [Required]
         public string ImgUrl { get; set; }
         [MaxLength(1000)]
@@ -27,6 +28,6 @@ namespace Parainfo.Data.Models
 
         public int Views { get; set; }
 
-        public IEnumerable<Size> Sizes { get; set; }
+        public IEnumerable<ParagliderSize> Sizes { get; set; }
     }
 }

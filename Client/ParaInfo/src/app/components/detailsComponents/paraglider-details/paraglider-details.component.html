@@ -6,7 +6,7 @@
         </div>
         <div>
             <button routerLink="/edit/paraglider/{{paraglider?.brand}}/{{paraglider?.model}}" class="edit">Edit</button>
-            <button class="delete">Delete</button>
+            <button (click)="deleteParaglider(paraglider?.id)" class="delete">Delete</button>
         </div>
     </article>
     <article class="description">
@@ -37,6 +37,7 @@
                 <li>NakedPilot</li>
                 <li>InflightWeight</li>
                 <li>WingLoading</li>
+                <li>MinSpeed</li>
                 <li>TrimSpeed</li>
                 <li>MaxSpeed</li>
                 <li>MinSinkRate</li>
@@ -60,6 +61,7 @@
                 <li>{{item?.nakedPilot || "-"}}</li>
                 <li>{{item?.inflightWeight || "-"}}</li>
                 <li>{{item?.wingLoading || "-"}}</li>
+                <li>{{item?.minSpeed || "-"}}</li>
                 <li>{{item?.trimSpeed || "-"}}</li>
                 <li>{{item?.maxSpeed || "-"}}</li>
                 <li>{{item?.minSinkRate || "-"}}</li>

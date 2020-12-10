@@ -100,6 +100,7 @@ namespace ParaInfo.Web
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<IParagliderService, ParagliderService>();
+            services.AddTransient<IHarnessService, HarnessService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 
