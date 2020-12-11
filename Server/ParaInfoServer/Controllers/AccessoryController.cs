@@ -8,30 +8,30 @@ namespace ParaInfo.Web.Controllers
 {
     public class AccessoryController : ApiController
     {
-        private readonly IAccessoaryService accessoaryService;
+        private readonly IAccessoaryService accessoryService;
 
-        public AccessoryController(IAccessoaryService accessoaryService)
+        public AccessoryController(IAccessoaryService accessoryService)
         {
-            this.accessoaryService = accessoaryService;
+            this.accessoryService = accessoryService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Json(await accessoaryService.GetAllFilteredAsync());
-        }
+            return Json(await accessoryService.GetAllFilteredAsync());
+        } 
 
 
         [HttpGet("{brand}")]
         public async Task<IActionResult> Get(string brand)
         {
-            return Json(await accessoaryService.GetAllByBrandFilteredAsync(brand));
+            return Json(await accessoryService.GetAllByBrandFilteredAsync(brand));
         }
 
         [HttpGet("{brand}/{model}")]
         public async Task<IActionResult> Get(string brand, string model)
         {
-            var paraglider = await accessoaryService.GetByModelAndBrandAsync(brand, model);
+            var paraglider = await accessoryService.GetByModelAndBrandAsync(brand, model);
             if (paraglider != null)
             {
                 return this.Json(paraglider);
@@ -44,7 +44,7 @@ namespace ParaInfo.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Post([FromForm] AddAccesoarModel input)
         {
-            var result = await accessoaryService.CreateAsync(input);
+            var result = await accessoryService.CreateAsync(input);
             if (result == null)
             {
                 return Json(new { });
@@ -56,7 +56,7 @@ namespace ParaInfo.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Put([FromForm] UpdateAccessoarModel input)
         {
-            var result = await accessoaryService.UpdateAsync(input);
+            var result = await accessoryService.UpdateAsync(input);
             if (result == null)
             {
                 return Json(new { });
@@ -68,7 +68,7 @@ namespace ParaInfo.Web.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            return Json(await accessoaryService.DeleteAsync(id));
+            return Json(await accessoryService.DeleteAsync(id));
         }
     }
 }

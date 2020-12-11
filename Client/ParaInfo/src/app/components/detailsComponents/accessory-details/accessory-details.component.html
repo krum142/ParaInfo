@@ -1,1 +1,19 @@
-<p>accessory-details works!</p>
+<section *ngIf="accessory">
+    <article class="header">
+        <div class="details">
+            <h2>Model: {{accessory.model}}</h2>
+            <img src="{{accessory.imgUrl}}" alt="">
+        </div>
+        <div>
+            <button routerLink="/edit/accessory/{{accessory?.brand}}/{{accessory?.model}}" class="edit">Edit</button>
+            <button (click)="deleteAccessory(accessory?.id)" class="delete">Delete</button>
+        </div>
+    </article>
+    <article class="description">
+        <h3>Description</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDescription}">
+            <p> {{accessory.description}}</p>
+        </div>
+        <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'"></i></a>
+    </article>
+</section>

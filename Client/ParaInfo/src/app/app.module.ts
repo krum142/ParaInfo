@@ -37,6 +37,8 @@ import { ReserveFormComponent } from './components/forms/reserve-form/reserve-fo
 import { ReserveService } from './services/reserve.service';
 import { ReserveDetailsComponent } from './components/detailsComponents/reserve-details/reserve-details.component';
 import { AccessoryDetailsComponent } from './components/detailsComponents/accessory-details/accessory-details.component';
+import { AccessoryFormComponent } from './components/forms/accessory-form/accessory-form.component';
+import { AccessoryService } from './services/accessory.service';
 
 
 
@@ -64,6 +66,7 @@ import { AccessoryDetailsComponent } from './components/detailsComponents/access
     ReserveFormComponent,
     ReserveDetailsComponent,
     AccessoryDetailsComponent,
+    AccessoryFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import { AccessoryDetailsComponent } from './components/detailsComponents/access
     ReserveService,
     FormDataService,
     GetProductsService,
+    AccessoryService,
     BrandService,
     MyValidators,
     {

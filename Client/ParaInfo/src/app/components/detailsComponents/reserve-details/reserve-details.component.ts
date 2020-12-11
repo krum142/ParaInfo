@@ -28,7 +28,7 @@ export class ReserveDetailsComponent implements OnInit {
     })
   }
 
-  deleteHarness(id:any){
+  deleteReserve(id:any){
     this.reserveService.delete(id).subscribe(data => {
       this.router.navigate([`/brand/${data.brand}/reserves`]);
     })

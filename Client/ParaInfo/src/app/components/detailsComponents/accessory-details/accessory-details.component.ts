@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccessoryService } from 'src/app/services/accessory.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
-import { HarnessService } from 'src/app/services/harness.service';
 
 @Component({
   selector: 'app-accessory-details',
@@ -13,16 +13,16 @@ export class AccessoryDetailsComponent implements OnInit {
   @Input() brand: string = "";
   @Input() model: string = "";
   showDescription:boolean = true;
-  harness: any
+  accessory: any
   constructor(
     private router: Router,
-    //private harnessService: HarnessService,
-    private productsService:GetProductsService) {
+    private accessoryService: AccessoryService,
+    private productsService: GetProductsService) {
    }
 
   ngOnInit(): void {
-    this.productsService.getOne("harness",this.brand,this.model).subscribe(data => {
-      this.harness = data;
+    this.productsService.getOne("accessory",this.brand,this.model).subscribe(data => {
+      this.accessory = data;
       if(!data.id){
         this.router.navigate(['**'])
       }
@@ -32,11 +32,11 @@ export class AccessoryDetailsComponent implements OnInit {
   log(x:any){
     console.log(x);
   }
-  // deleteHarness(id:any){
-  //   this.harnessService.delete(id).subscribe(data => {
-  //     this.router.navigate([`/brand/${data.brand}/harnesses`]);
-  //   })
-  // }
+  deleteAccessory(id:any){
+    this.accessoryService.delete(id).subscribe(data => {
+      this.router.navigate([`/brand/${data.brand}/harnesses`]);
+    })
+  }
 
   toggleDescription() {
     this.showDescription = !this.showDescription

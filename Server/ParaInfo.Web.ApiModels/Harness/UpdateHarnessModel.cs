@@ -16,7 +16,6 @@ namespace ParaInfo.Web.ApiModels.Harness
         [Required]
         public string Model { get; set; }
 
-        [Required]
         [FileValidation]
         public IFormFile File { get; set; }
 

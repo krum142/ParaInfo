@@ -29,7 +29,7 @@ export class ReserveFormComponent implements OnInit {
     this.createReserveForm = this.fb.group({
       'id': [''],
       'brand': this.brandName,
-      'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, 'harness', this.brandName, this.editModel, this.edit)],
+      'model': ['', [Validators.required, Validators.maxLength(30)], this.myValidators.checkModel.bind(this.myValidators, 'reserve', this.brandName, this.editModel, this.edit)],
       'file': ['', !this.edit ? Validators.required : [], this.myValidators.checkFile.bind(this.myValidators)],
       'price': ['', [Validators.pattern("^[0-9.-]*$"), Validators.maxLength(20)]],
       'description': ['', [Validators.maxLength(1000)]],
@@ -72,7 +72,7 @@ export class ReserveFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createReserveForm.value, null, formData);
       this.reserveService.create(formData).subscribe(data => {
-        this.router.navigate([`/details/harness/${data.brand}/${data.model}`]);
+        this.router.navigate([`/details/reserve/${data.brand}/${data.model}`]);
       });
     }
   }
@@ -82,7 +82,7 @@ export class ReserveFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createReserveForm.value, null, formData);
       this.reserveService.update(formData).subscribe(data => {
-        this.router.navigate([`/details/harness/${data.brand}/${data.model}`]);
+        this.router.navigate([`/details/reserve/${data.brand}/${data.model}`]);
       });
     }
   }

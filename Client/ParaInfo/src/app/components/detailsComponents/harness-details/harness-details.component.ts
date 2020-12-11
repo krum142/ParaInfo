@@ -28,9 +28,6 @@ export class HarnessDetailsComponent implements OnInit {
     })
   }
 
-  log(x:any){
-    console.log(x);
-  }
   deleteHarness(id:any){
     this.harnessService.delete(id).subscribe(data => {
       this.router.navigate([`/brand/${data.brand}/harnesses`]);

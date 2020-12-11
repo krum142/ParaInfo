@@ -17,18 +17,18 @@
         <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'"></i></a>
     </article>
 
-    <body>
+    <main>
         <article class="table">
             <ul class="header-table">
                 <li>Price</li>
                 <li>Size</li>
                 <li>Pilot Height</li>
                 <li>Seat Width</li>
-                <li>SeatDepth</li>
+                <li>Seat Depth</li>
                 <li>Carabiner Height</li>
                 <li>Chest Strap Width</li>
                 <li>Harness Weight</li>
-                <li (click)="log(harness)">Certification</li>
+                <li>Certification</li>
             </ul>
             <ul class="main-table" *ngFor="let item of harness.sizes">
                 <li>{{harness?.price || "-"}}</li>
@@ -42,5 +42,5 @@
                 <li>{{item?.certification || "-"}}</li>
             </ul>
         </article>
-    </body>
+    </main>
 </section>
