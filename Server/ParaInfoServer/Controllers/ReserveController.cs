@@ -2,79 +2,74 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ParaInfo.Web.ApiModels.Paraglider;
+using ParaInfo.Web.ApiModels.Reserve;
 using Services.Services.Data.Interfaces;
 
 namespace ParaInfo.Web.Controllers
 {
     public class ReserveController : ApiController
     {
+        private readonly IReserveService reserveService;
 
-        public ReserveController()
+        public ReserveController(IReserveService reserveService)
         {
+            this.reserveService = reserveService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            // return Json(await paragliderService.GetAllFilteredAsync());
-            return Ok();
+            return Json(await reserveService.GetAllFilteredAsync());
         }
 
 
         [HttpGet("{brand}")]
         public async Task<IActionResult> Get(string brand)
         {
-           // return Json(await paragliderService.GetAllByBrandFilteredAsync(brand));
-           return Ok();
+            return Json(await reserveService.GetAllByBrandFilteredAsync(brand));
         }
 
         [HttpGet("{brand}/{model}")]
         public async Task<IActionResult> Get(string brand, string model)
         {
-            //var paraglider = await paragliderService.GetByModelAndBrandAsync(brand, model);
-            //if (paraglider != null)
-            //{
-            //    return this.Json(paraglider);
-            //}
+            var paraglider = await reserveService.GetByModelAndBrandAsync(brand, model);
+            if (paraglider != null)
+            {
+                return this.Json(paraglider);
+            }
 
-            //return Json(new { });
-            return Ok();
-
+            return Json(new { });
         }
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Post([FromForm] AddParagliderModel input)
+        public async Task<IActionResult> Post([FromForm] AddReserveModel input)
         {
-            //var result = await paragliderService.CreateAsync(input);
-            //if (result == null)
-            //{
-            //    return Json(new { });
-            //}
-            //return Json(result);
-            return Ok();
-
+            var result = await reserveService.CreateAsync(input);
+            if (result == null)
+            {
+                return Json(new { });
+            }
+            return Json(result);
         }
 
         [HttpPut]
         [Authorize]
-        public async Task<IActionResult> Put([FromForm] UpdateParagliderModel input)
+        public async Task<IActionResult> Put([FromForm] UpdateReserveModel input)
         {
-            //var result = await paragliderService.UpdateAsync(input);
-            //if (result == null)
-            //{
-            //    return Json(new { });
-            //}
-            //return Json(result);
-            return Ok();
+            var result = await reserveService.UpdateAsync(input);
+            if (result == null)
+            {
+                return Json(new { });
+            }
+            return Json(result);
         }
 
         [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            // return Json(await paragliderService.DeleteAsync(id));
-            return Ok();
+            return Json(await reserveService.DeleteAsync(id));
         }
     }
 }

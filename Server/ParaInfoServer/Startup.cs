@@ -101,6 +101,8 @@ namespace ParaInfo.Web
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<IParagliderService, ParagliderService>();
             services.AddTransient<IHarnessService, HarnessService>();
+            services.AddTransient<IReserveService, ReserveService>();
+            services.AddTransient<IAccessoaryService, AccessoryService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
         }
 

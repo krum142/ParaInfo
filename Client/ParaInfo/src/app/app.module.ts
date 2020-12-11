@@ -33,6 +33,10 @@ import { EditComponent } from './components/edit/edit.component';
 import { HarnessFormComponent } from './components/forms/harness-form/harness-form.component';
 import { HarnessService } from './services/harness.service';
 import { HarnessDetailsComponent } from './components/detailsComponents/harness-details/harness-details.component';
+import { ReserveFormComponent } from './components/forms/reserve-form/reserve-form.component';
+import { ReserveService } from './services/reserve.service';
+import { ReserveDetailsComponent } from './components/detailsComponents/reserve-details/reserve-details.component';
+import { AccessoryDetailsComponent } from './components/detailsComponents/accessory-details/accessory-details.component';
 
 
 
@@ -57,6 +61,9 @@ import { HarnessDetailsComponent } from './components/detailsComponents/harness-
     EditComponent,
     HarnessFormComponent,
     HarnessDetailsComponent,
+    ReserveFormComponent,
+    ReserveDetailsComponent,
+    AccessoryDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +75,7 @@ import { HarnessDetailsComponent } from './components/detailsComponents/harness-
     AuthService,
     ParagliderService,
     HarnessService,
+    ReserveService,
     FormDataService,
     GetProductsService,
     BrandService,

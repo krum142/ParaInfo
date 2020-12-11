@@ -6,6 +6,6 @@ export class GlobalConstants {
         'paragliders': 'paraglider',
         'harnesses': 'harness',
         'reserves': 'reserve',
-        'accessoars': 'acessoar'
+        'аccessories': 'accessory'
     };
 }

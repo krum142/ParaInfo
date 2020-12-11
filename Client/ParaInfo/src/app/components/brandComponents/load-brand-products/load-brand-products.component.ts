@@ -16,7 +16,7 @@ export class LoadBrandProductsComponent implements OnInit {
   constructor(private productsService: GetProductsService) { }
 
   ngOnInit(): void {
-    this.singleCategoryName = GlobalConstants.categorys[this.categoryName];
+    this.singleCategoryName = GlobalConstants.categorys[this.categoryName.toLowerCase()];
     this.productsService.getAll(this.singleCategoryName,this.brandName).subscribe(data => {
       this.products = data;
     });

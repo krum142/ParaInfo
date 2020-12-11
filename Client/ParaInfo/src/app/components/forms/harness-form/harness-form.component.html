@@ -118,10 +118,10 @@
                 <button class="add-button" (click)="addSize()"><i class="fas fa-plus-circle"></i></button>
             </div>
             <ng-container *ngIf="edit; else elseTemplate">
-                <button class="submit-button" (click)="updateParaglider()">Update Paraglider</button>
+                <button class="submit-button" (click)="updateHarness()">Update Paraglider</button>
             </ng-container>
             <ng-template #elseTemplate>
-                <button class="submit-button" (click)="createParaglider()">Create Paraglider</button>
+                <button class="submit-button" (click)="createHarness()">Create Paraglider</button>
             </ng-template>
         </form>
     </article>

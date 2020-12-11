@@ -23,7 +23,6 @@ export class HarnessFormComponent implements OnInit {
     private formdataService: FormDataService) { }
 
   ngOnInit(): void {
-    console.log(this.brandName);
     this.createHarnessForm = this.fb.group({
       'id': [''],
       'brand': this.brandName,
@@ -84,9 +83,8 @@ export class HarnessFormComponent implements OnInit {
     this.sizeArray.removeAt(index);
   }
 
-  createParaglider() {
+  createHarness() {
     if (this.createHarnessForm.status === "VALID") {
-      console.log(this.createHarnessForm.value)
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createHarnessForm.value, null, formData);
       this.harnessService.create(formData).subscribe(data => {
@@ -95,7 +93,7 @@ export class HarnessFormComponent implements OnInit {
     }
   }
 
-  updateParaglider() {
+  updateHarness() {
     if (this.createHarnessForm.status === "VALID") {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createHarnessForm.value, null, formData);

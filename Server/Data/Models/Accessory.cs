@@ -6,9 +6,9 @@ using Parainfo.Data.Common.Models;
 namespace Parainfo.Data.Models
 {
     [BsonCollection("Accessories")]
-    public class Assessor : BaseModel
+    public class Accessory : BaseModel
     {
-        public Assessor()
+        public Accessory()
         {
             this.Id = Guid.NewGuid().ToString();
         }
@@ -21,7 +21,7 @@ namespace Parainfo.Data.Models
         [Required]
         public string ImgUrl { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         public int Views { get; set; }
 

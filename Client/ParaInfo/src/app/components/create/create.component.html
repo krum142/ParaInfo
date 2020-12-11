@@ -1,6 +1,7 @@
 <span [ngSwitch]="type">
     <app-paraglider-form *ngSwitchCase="'paraglider'" [brandName]="brandName"></app-paraglider-form>
     <app-harness-form *ngSwitchCase="'harness'" [brandName]="brandName"></app-harness-form>
+    <app-reserve-form *ngSwitchCase="'reserve'" [brandName]="brandName"></app-reserve-form>
     <app-brand-form *ngSwitchCase="'brand'"></app-brand-form>
     <app-no-page-found  *ngSwitchDefault></app-no-page-found>
 </span>
