@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/common/globalConstants';
-import { GetProductsService } from 'src/app/services/get-products.service';
 
 @Component({
   selector: 'app-details',

@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'brand/:brandName/:category', component: BrandComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'details/:type/:brand/:model', component: DetailsComponent },
-  { path: 'edit/:type/:brand', component: EditComponent },
-  { path: 'edit/:type/:brand/:model', component: EditComponent },
+  { path: 'edit/:type/:brand', component: EditComponent,canActivate: [AuthGuardService] },
+  { path: 'edit/:type/:brand/:model', component: EditComponent,canActivate: [AuthGuardService] },
   { path: 'create/:type', component: CreateComponent, canActivate: [AuthGuardService] },
   { path: 'create/:type/:brandName', component: CreateComponent, canActivate: [AuthGuardService] },
   { path: '**', component: NoPageFoundComponent }

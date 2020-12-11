@@ -36,6 +36,8 @@ namespace Parainfo.Data.Common.Repositories
         Task<IEnumerable<T>> GetAllFilteredByBrandAsync(Expression<Func<T, bool>> filterExpression,
             ProjectionDefinition<T, T> projection);
 
+        Task<IEnumerable<T>> GetAllOrderByAsync(Expression<Func<T, object>> expression, int count);
+
         void InsertOne(T document);
 
         Task InsertOneAsync(T document);

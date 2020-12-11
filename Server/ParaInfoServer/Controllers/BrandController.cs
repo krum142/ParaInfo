@@ -21,6 +21,12 @@ namespace ParaInfo.Web.Controllers
             return Json(await brandService.GetAllAsync());
         }
 
+        [HttpGet("count/{count}")]
+        public async Task<IActionResult> GetOrderedAndLimited(int count)
+        {
+            return Json(await brandService.GetAFewOrderByViewsAsync(count));
+        }
+
         [HttpGet("{name}")]
         public async Task<IActionResult> Get(string name)
         {

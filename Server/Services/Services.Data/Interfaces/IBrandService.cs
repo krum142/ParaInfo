@@ -17,5 +17,7 @@ namespace Services.Services.Data.Interfaces
         public Task<Brand> UpdateAsync(Brand customer);
 
         public Task<Brand> DeleteAsync(string id);
+
+        public Task<IEnumerable<Brand>> GetAFewOrderByViewsAsync(int count);
     }
 }

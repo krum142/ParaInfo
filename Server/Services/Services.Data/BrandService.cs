@@ -21,6 +21,12 @@ namespace Services.Services.Data
         {
             return await mongoDb.GetAllAsync();
         }
+
+        public async Task<IEnumerable<Brand>> GetAFewOrderByViewsAsync(int count)
+        {
+            return await mongoDb.GetAllOrderByAsync(x => x.Views,count);
+        }
+
         public async Task<Brand> GetByIdAsync(string id)
         {
             return await mongoDb.FindByIdAsync(id);
@@ -28,7 +34,13 @@ namespace Services.Services.Data
 
         public async Task<Brand> GetByNameAsync(string name)
         {
-            return await mongoDb.FindOneAsync(x => x.Name.ToLower() == name.ToLower());
+            var brand = await mongoDb.FindOneAsync(x => x.Name.ToLower() == name.ToLower());
+
+            if (brand == null) return brand;
+
+            brand.Views++;
+            await mongoDb.ReplaceOneAsync(brand);
+            return brand;
         }
 
         public async Task<Brand> CreateAsync(Brand customer)
