@@ -14,7 +14,6 @@ export class MostViewedParaglidersComponent implements OnInit {
   ngOnInit(): void {
     this.paraService.getAllByCount(4).subscribe(data => {
       this.paragliders = data;
-      console.log(data[0]);
     })
   }
 

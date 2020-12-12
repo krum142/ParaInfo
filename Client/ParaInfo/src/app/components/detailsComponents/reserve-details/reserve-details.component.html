@@ -4,7 +4,7 @@
             <h2>Model: {{reserve.model}}</h2>
             <img src="{{reserve.imgUrl}}" alt="">
         </div>
-        <div>
+        <div *ngIf="isUserLogged">
             <button routerLink="/edit/reserve/{{reserve?.brand}}/{{reserve?.model}}" class="edit">Edit</button>
             <button (click)="deleteReserve(reserve?.id)" class="delete">Delete</button>
         </div>

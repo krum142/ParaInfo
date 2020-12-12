@@ -4,7 +4,7 @@
             <h2>Model: {{paraglider.model}}</h2>
             <img src="{{paraglider.imgUrl}}" alt="">
         </div>
-        <div>
+        <div *ngIf="isUserLogged">
             <button routerLink="/edit/paraglider/{{paraglider?.brand}}/{{paraglider?.model}}" class="edit">Edit</button>
             <button (click)="deleteParaglider(paraglider?.id)" class="delete">Delete</button>
         </div>

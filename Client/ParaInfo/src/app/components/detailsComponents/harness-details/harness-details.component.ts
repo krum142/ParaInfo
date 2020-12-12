@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { HarnessService } from 'src/app/services/harness.service';
 
@@ -13,8 +14,10 @@ export class HarnessDetailsComponent implements OnInit {
   @Input() model: string = "";
   showDescription:boolean = true;
   harness: any
+  isUserLogged: boolean = this.authService.isAuthenticated();
   constructor(
     private router: Router,
+    private authService: AuthService,
     private harnessService: HarnessService,
     private productsService:GetProductsService) {
    }

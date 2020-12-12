@@ -4,7 +4,7 @@
             <h2>Model: {{harness.model}}</h2>
             <img src="{{harness.imgUrl}}" alt="">
         </div>
-        <div>
+        <div *ngIf="isUserLogged">
             <button routerLink="/edit/harness/{{harness?.brand}}/{{harness?.model}}" class="edit">Edit</button>
             <button (click)="deleteHarness(harness?.id)" class="delete">Delete</button>
         </div>

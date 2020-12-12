@@ -4,7 +4,7 @@
             <h2>Model: {{accessory.model}}</h2>
             <img src="{{accessory.imgUrl}}" alt="">
         </div>
-        <div>
+        <div *ngIf="isUserLogged">
             <button routerLink="/edit/accessory/{{accessory?.brand}}/{{accessory?.model}}" class="edit">Edit</button>
             <button (click)="deleteAccessory(accessory?.id)" class="delete">Delete</button>
         </div>

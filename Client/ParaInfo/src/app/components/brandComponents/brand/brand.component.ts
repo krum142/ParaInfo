@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/common/globalConstants';
+import { AuthService } from 'src/app/services/auth.service';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -14,8 +15,9 @@ export class BrandComponent implements OnInit {
   categoryRouteName:string = "";
   brandName: string;
   showDetails: boolean = true;
-
+  isUserLogged: boolean = this.authService.isAuthenticated();
   constructor(
+    private authService: AuthService,
     private route: ActivatedRoute,
     private brandService: BrandService,
     private router: Router) {

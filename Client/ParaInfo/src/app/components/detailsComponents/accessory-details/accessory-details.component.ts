@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccessoryService } from 'src/app/services/accessory.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
 
 @Component({
@@ -14,8 +15,10 @@ export class AccessoryDetailsComponent implements OnInit {
   @Input() model: string = "";
   showDescription:boolean = true;
   accessory: any
+  isUserLogged: boolean = this.authService.isAuthenticated();
   constructor(
     private router: Router,
+    private authService: AuthService,
     private accessoryService: AccessoryService,
     private productsService: GetProductsService) {
    }
