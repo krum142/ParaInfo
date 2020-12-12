@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { HarnessService } from 'src/app/services/harness.service';
@@ -17,6 +18,7 @@ export class HarnessDetailsComponent implements OnInit {
   isUserLogged: boolean = this.authService.isAuthenticated();
   constructor(
     private router: Router,
+    private toastr: ToastrService,
     private authService: AuthService,
     private harnessService: HarnessService,
     private productsService:GetProductsService) {
@@ -33,6 +35,7 @@ export class HarnessDetailsComponent implements OnInit {
 
   deleteHarness(id:any){
     this.harnessService.delete(id).subscribe(data => {
+      this.toastr.success("Harness Deleted","Deleted");
       this.router.navigate([`/brand/${data.brand}/harnesses`]);
     })
   }

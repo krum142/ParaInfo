@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class BrandFormComponent implements OnInit {
   constructor(
     private brandService: BrandService,
     private fb: FormBuilder,
+    private toastr: ToastrService,
     private router: Router) {
     this.createBrandForm = this.fb.group({
       'name':['',[Validators.required]],
@@ -28,6 +30,7 @@ export class BrandFormComponent implements OnInit {
     if(this.createBrandForm.status === "VALID"){
       this.brandService.create(this.createBrandForm.value).subscribe(data => {
         if(data !== null){
+          this.toastr.success("Brand Created","Created");
           this.router.navigate(['']);
         }
       });

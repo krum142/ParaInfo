@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { MyValidators } from 'src/app/services/MyValidators';
 import { ReserveService } from 'src/app/services/reserve.service';
@@ -20,6 +21,7 @@ export class ReserveFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private toastr: ToastrService,
     private myValidators: MyValidators,
     private reserveService: ReserveService,
     private formdataService: FormDataService
@@ -72,6 +74,7 @@ export class ReserveFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createReserveForm.value, null, formData);
       this.reserveService.create(formData).subscribe(data => {
+        this.toastr.success("Reserve Created","Created");
         this.router.navigate([`/details/reserve/${data.brand}/${data.model}`]);
       });
     }
@@ -82,6 +85,7 @@ export class ReserveFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createReserveForm.value, null, formData);
       this.reserveService.update(formData).subscribe(data => {
+        this.toastr.success("Reserve Edited","Edited");
         this.router.navigate([`/details/reserve/${data.brand}/${data.model}`]);
       });
     }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AccessoryService } from 'src/app/services/accessory.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
@@ -19,6 +20,7 @@ export class AccessoryDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private toastr: ToastrService,
     private accessoryService: AccessoryService,
     private productsService: GetProductsService) {
    }
@@ -37,6 +39,7 @@ export class AccessoryDetailsComponent implements OnInit {
   }
   deleteAccessory(id:any){
     this.accessoryService.delete(id).subscribe(data => {
+      this.toastr.success("Accessory Deleted","Deleted");
       this.router.navigate([`/brand/${data.brand}/harnesses`]);
     })
   }

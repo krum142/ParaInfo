@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   constructor(
     private fb: FormBuilder,
+    private toastr: ToastrService,
     private auth: AuthService) {
     this.registerForm = this.fb.group({
       'username': ['', [Validators.required]],
@@ -29,9 +31,11 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.password?.value == this.confirmPassword?.value &&
       this.registerForm.status === "VALID") {
-
-      delete this.registerForm.value['confirm-password'];
-      this.auth.register(this.registerForm.value).subscribe((data) => { }, error => {       
+      this.registerForm.value['confirm-password'];
+      this.auth.register(this.registerForm.value).subscribe((data) => { 
+        this.toastr.success("You Registered","Success")
+      }, error => {    
+        this.toastr.error("Something Went Wrong :(","Error");
       });
     }
   }

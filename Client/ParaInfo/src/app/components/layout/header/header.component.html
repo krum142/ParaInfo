@@ -9,6 +9,7 @@
 <ng-template #loggedInTemplate>
     <li class="logo"><a href="#">ParaInfo</a></li>
     <li class="item"><a href="#">Home</a></li>
+    <li class="item"><a routerLink="/create/brand">Create Brand</a></li>
     <li class="item"><a href="#">Welcome {{ username }}</a></li>
     <li class="item button"><a (click)="logout()">Logout</a></li>
     <li class="toggle"><a (click)="toggleMobileMenu()"><i class="fas" [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>
@@ -17,7 +18,6 @@
 <ng-template #loggedOutTemplate>
         <li class="logo"><a href="">ParaInfo</a></li>
         <li class="item"><a href="">Home</a></li>
-        <li class="item"><a href="">About</a></li>
         <li class="item button"><a [routerLink]="['/login']">Log In</a></li>
         <li class="item button secondary"><a [routerLink]="['/register']">Register</a></li>
         <li class="toggle"><a (click)="toggleMobileMenu()"><i class="fas" [ngClass]="showMobileMenu ? 'fa-times' : 'fa-bars'"></i></a></li>

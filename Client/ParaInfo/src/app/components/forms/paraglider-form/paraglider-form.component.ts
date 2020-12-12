@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { MyValidators } from 'src/app/services/MyValidators';
 import { ParagliderService } from 'src/app/services/paraglider.service';
@@ -18,6 +19,7 @@ export class ParagliderFormComponent implements OnInit {
   createParagliderForm: any;
   constructor(
     private fb: FormBuilder,
+    private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router,
     private myValidators: MyValidators,
@@ -104,6 +106,7 @@ export class ParagliderFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createParagliderForm.value, null, formData);
       this.paraService.create(formData).subscribe(data => {
+        this.toastr.success("Paraglider Created","Created");
         this.router.navigate([`/details/paraglider/${data.brand}/${data.model}`]);
       });
     }
@@ -114,6 +117,7 @@ export class ParagliderFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createParagliderForm.value, null, formData);
       this.paraService.update(formData).subscribe(data => {
+        this.toastr.success("Paraglider Edited","Edited");
         this.router.navigate([`/details/paraglider/${data.brand}/${data.model}`]);
       });
     }

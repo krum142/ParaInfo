@@ -1,5 +1,5 @@
 <section>
-    <article *ngFor="let paraglider of paragliders">
+    <article *ngFor="let paraglider of paragliders" routerLink="/details/paraglider/{{paraglider.brand}}/{{paraglider.model}}">
         <img src="{{paraglider.imgUrl}}" alt="">
         <div>
             <h2>{{paraglider.model}}</h2>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { HarnessService } from 'src/app/services/harness.service';
 import { MyValidators } from 'src/app/services/MyValidators';
@@ -18,6 +19,7 @@ export class HarnessFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private toastr: ToastrService,
     private myValidators: MyValidators,
     private harnessService: HarnessService,
     private formdataService: FormDataService) { }
@@ -88,6 +90,7 @@ export class HarnessFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createHarnessForm.value, null, formData);
       this.harnessService.create(formData).subscribe(data => {
+        this.toastr.success('Harness Created','Created');
         this.router.navigate([`/details/harness/${data.brand}/${data.model}`]);
       });
     }
@@ -98,6 +101,7 @@ export class HarnessFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createHarnessForm.value, null, formData);
       this.harnessService.update(formData).subscribe(data => {
+        this.toastr.success('Harness Edited','Edited');
         this.router.navigate([`/details/harness/${data.brand}/${data.model}`]);
       });
     }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AccessoryService } from 'src/app/services/accessory.service';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { MyValidators } from 'src/app/services/MyValidators';
@@ -19,6 +20,7 @@ export class AccessoryFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private toastr: ToastrService,
     private myValidators: MyValidators,
     private accessoryService: AccessoryService,
     private formdataService: FormDataService
@@ -53,6 +55,7 @@ export class AccessoryFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createAccessoryForm.value, null, formData);
       this.accessoryService.create(formData).subscribe(data => {
+        this.toastr.success("Accessory Created","Created");
         this.router.navigate([`/details/accessory/${data.brand}/${data.model}`]);
       });
     }
@@ -63,6 +66,7 @@ export class AccessoryFormComponent implements OnInit {
       let formData = new FormData();
       this.formdataService.convertJsontoFormData(this.createAccessoryForm.value, null, formData);
       this.accessoryService.update(formData).subscribe(data => {
+        this.toastr.success("Accessory Edited","Edited");
         this.router.navigate([`/details/accessory/${data.brand}/${data.model}`]);
       });
     }

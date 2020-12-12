@@ -41,7 +41,8 @@ import { AccessoryFormComponent } from './components/forms/accessory-form/access
 import { AccessoryService } from './services/accessory.service';
 import { MostViewedParaglidersComponent } from './components/most-viewed-paragliders/most-viewed-paragliders.component';
 import { MostViewedBrandsComponent } from './components/most-viewed-brands/most-viewed-brands.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -70,13 +71,17 @@ import { MostViewedBrandsComponent } from './components/most-viewed-brands/most-
     AccessoryDetailsComponent,
     AccessoryFormComponent,
     MostViewedParaglidersComponent,
-    MostViewedBrandsComponent,
+    MostViewedBrandsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-bottom-right"
+    }),
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthService,

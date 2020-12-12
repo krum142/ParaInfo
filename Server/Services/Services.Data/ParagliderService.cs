@@ -68,6 +68,7 @@ namespace Services.Services.Data
         {
             var projection = Builders<Paraglider>.Projection
                 .Include(p => p.Model)
+                .Include(x => x.Brand)
                 .Include(x => x.ImgUrl);
 
             return await mongoDb.GetAllOrderedAndFilteredAsync(projection,x => x.Views, count);

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { ReserveService } from 'src/app/services/reserve.service';
@@ -18,6 +19,7 @@ export class ReserveDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private toastr: ToastrService,
     private reserveService: ReserveService,
     private productsService:GetProductsService) {
    }
@@ -33,6 +35,7 @@ export class ReserveDetailsComponent implements OnInit {
 
   deleteReserve(id:any){
     this.reserveService.delete(id).subscribe(data => {
+      this.toastr.success("Reserve Deleted","Deleted");
       this.router.navigate([`/brand/${data.brand}/reserves`]);
     })
   }
