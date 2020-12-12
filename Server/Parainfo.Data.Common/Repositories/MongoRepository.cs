@@ -106,12 +106,12 @@ namespace Parainfo.Data.Common.Repositories
             return await _collection.Find(x => true).Project<T>(projection).ToListAsync();
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllOrderByAsync(Expression<Func<T,object>> expression,int count)
+        public virtual async Task<IEnumerable<T>> GetAllOrderedAndFilteredAsync(ProjectionDefinition<T, T> projection, Expression<Func<T,object>> expression,int count)
         {
-            return await _collection.Find(x => true).SortByDescending(expression).Limit(count).ToListAsync();
+            return await _collection.Find(x => true).Project<T>(projection).SortByDescending(expression).Limit(count).ToListAsync();
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllFilteredByBrandAsync(Expression<Func<T, bool>> filterExpression, ProjectionDefinition<T, T> projection)
+        public virtual async Task<IEnumerable<T>> GetAllFilteredAsync(Expression<Func<T, bool>> filterExpression, ProjectionDefinition<T, T> projection)
         {
             return await _collection.Find(filterExpression).Project<T>(projection).ToListAsync();
         }

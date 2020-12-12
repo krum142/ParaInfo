@@ -33,10 +33,11 @@ namespace Parainfo.Data.Common.Repositories
 
         Task<IEnumerable<T>> GetAllFilteredAsync(ProjectionDefinition<T, T> projection);
 
-        Task<IEnumerable<T>> GetAllFilteredByBrandAsync(Expression<Func<T, bool>> filterExpression,
+        Task<IEnumerable<T>> GetAllFilteredAsync(Expression<Func<T, bool>> filterExpression,
             ProjectionDefinition<T, T> projection);
 
-        Task<IEnumerable<T>> GetAllOrderByAsync(Expression<Func<T, object>> expression, int count);
+        Task<IEnumerable<T>> GetAllOrderedAndFilteredAsync(ProjectionDefinition<T, T> projection,
+            Expression<Func<T, object>> expression, int count);
 
         void InsertOne(T document);
 

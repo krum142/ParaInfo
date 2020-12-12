@@ -22,6 +22,11 @@ namespace ParaInfo.Web.Controllers
             return Json(await paragliderService.GetAllFilteredAsync());
         }
 
+        [HttpGet("count/{count}")]
+        public async Task<IActionResult> GetOrderedAndLimited(int count)
+        {
+            return Json(await paragliderService.GetAFewOrderByViewsAsync(count));
+        }
 
         [HttpGet("{brand}")]
         public async Task<IActionResult> Get(string brand)

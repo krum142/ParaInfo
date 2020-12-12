@@ -23,6 +23,8 @@ namespace Services.Services.Data.Interfaces
 
         public Task<Paraglider> GetByModelAsync(string name);
 
+        Task<IEnumerable<Paraglider>> GetAFewOrderByViewsAsync(int count);
+
         public Task<Paraglider> UpdateAsync(UpdateParagliderModel model);
 
         public Task<Paraglider> DeleteAsync(string id);

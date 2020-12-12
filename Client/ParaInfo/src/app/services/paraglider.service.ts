@@ -29,4 +29,8 @@ export class ParagliderService {
     }
     return EMPTY;
   }
+
+  getAllByCount(count:number):Observable<Array<Paraglider>>{
+    return this.http.get<Array<Paraglider>>(`${this.Path}/count/${count}`);
+  }
 }

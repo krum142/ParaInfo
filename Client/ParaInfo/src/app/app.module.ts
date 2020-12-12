@@ -39,6 +39,8 @@ import { ReserveDetailsComponent } from './components/detailsComponents/reserve-
 import { AccessoryDetailsComponent } from './components/detailsComponents/accessory-details/accessory-details.component';
 import { AccessoryFormComponent } from './components/forms/accessory-form/accessory-form.component';
 import { AccessoryService } from './services/accessory.service';
+import { MostViewedParaglidersComponent } from './components/most-viewed-paragliders/most-viewed-paragliders.component';
+import { MostViewedBrandsComponent } from './components/most-viewed-brands/most-viewed-brands.component';
 
 
 
@@ -67,6 +69,8 @@ import { AccessoryService } from './services/accessory.service';
     ReserveDetailsComponent,
     AccessoryDetailsComponent,
     AccessoryFormComponent,
+    MostViewedParaglidersComponent,
+    MostViewedBrandsComponent,
   ],
   imports: [
     BrowserModule,

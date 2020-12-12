@@ -1,4 +1,4 @@
-section {
+section.header {
     width: 90%;
     margin: 0 auto;
     display:flex;
@@ -54,3 +54,23 @@ section.header article.menu div ul li a:hover{
     font-weight: bolder;
     text-decoration: none;
 }
+
+section.viewed-brands{
+    background: lightgrey;
+    margin: 349px 0 0 0;
+}
+
+section.viewed-brands h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+section.viewed-paragliders{
+    background: lightskyblue;
+}
+
+section.viewed-paragliders h1{
+    text-align: center;
+    padding: 20px;
+}
+

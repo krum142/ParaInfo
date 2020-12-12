@@ -43,7 +43,7 @@ namespace Services.Services.Data
                 .Include(x => x.ImgUrl)
                 .Include(x => x.Brand);
 
-            return await mongoDb.GetAllFilteredByBrandAsync(x => x.Brand == brand, projection);
+            return await mongoDb.GetAllFilteredAsync(x => x.Brand == brand, projection);
         }
         public async Task<Paraglider> GetByIdAsync(string id)
         {
@@ -62,6 +62,15 @@ namespace Services.Services.Data
             paraglider.Views++;
             await mongoDb.ReplaceOneAsync(paraglider);
             return paraglider;
+        }
+
+        public async Task<IEnumerable<Paraglider>> GetAFewOrderByViewsAsync(int count)
+        {
+            var projection = Builders<Paraglider>.Projection
+                .Include(p => p.Model)
+                .Include(x => x.ImgUrl);
+
+            return await mongoDb.GetAllOrderedAndFilteredAsync(projection,x => x.Views, count);
         }
 
         public async Task<Paraglider> GetByModelAsync(string model)

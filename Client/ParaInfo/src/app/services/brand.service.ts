@@ -25,4 +25,8 @@ export class BrandService {
     return this.http.get<Brand>(`${this.Path}/${name}`)
     .pipe(shareReplay(1));
   }
+
+  getAllByCount(count:number):Observable<Array<Brand>>{
+    return this.http.get<Array<Brand>>(`${this.Path}/count/${count}`);
+  }
 }

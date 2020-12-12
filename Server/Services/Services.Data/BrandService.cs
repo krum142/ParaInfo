@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 using Parainfo.Data.Common.Repositories;
 using Parainfo.Data.Models;
 using Services.Services.Data.Interfaces;
@@ -24,7 +25,11 @@ namespace Services.Services.Data
 
         public async Task<IEnumerable<Brand>> GetAFewOrderByViewsAsync(int count)
         {
-            return await mongoDb.GetAllOrderByAsync(x => x.Views,count);
+            var projection = Builders<Brand>.Projection
+                .Include(p => p.Name)
+                .Include(x => x.ImageUrl);
+
+            return await mongoDb.GetAllOrderedAndFilteredAsync(projection,x => x.Views,count);
         }
 
         public async Task<Brand> GetByIdAsync(string id)

@@ -42,7 +42,7 @@ namespace Services.Services.Data
                 .Include(x => x.ImgUrl)
                 .Include(x => x.Brand);
 
-            return await mongoDb.GetAllFilteredByBrandAsync(x => x.Brand == brand, projection);
+            return await mongoDb.GetAllFilteredAsync(x => x.Brand == brand, projection);
         }
         public async Task<Harness> GetByIdAsync(string id)
         {
