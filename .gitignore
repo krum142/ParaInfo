@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+/Server/ParaInfoServer/appsettings.json
+
 # User-specific files
 *.rsuser
 *.suo
@@ -353,4 +355,4 @@ MigrationBackup/
 .ionide/
 
 
-/Server/ParaInfoServer/appsettings.json
+
