@@ -353,4 +353,4 @@ MigrationBackup/
 .ionide/
 
 
-Server/ParaInfoServer/appsettings.json
+/Server/ParaInfoServer/appsettings.json
