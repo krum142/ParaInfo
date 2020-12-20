@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Services\\Services.csproj": {}
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj",
         "projectName": "Parainfo.Data",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -32,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj"
+              "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj"
               }
             }
           }
@@ -72,26 +68,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj",
         "projectName": "Parainfo.Data.Common",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Parainfo.Data.Common\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\Parainfo.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Parainfo.Data.Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -140,26 +132,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj",
         "projectName": "ParaInfo.Web.ApiModels",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -172,11 +160,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
-                "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj"
+              "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
+                "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj"
               },
-              "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj"
+              "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj"
               }
             }
           }
@@ -211,26 +199,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
         "projectName": "ParaInfo.Web.Infrastructure",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -275,26 +259,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Services\\Services.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Services\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -307,11 +287,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
-                "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj"
+              "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj": {
+                "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\Data\\Parainfo.Data.csproj"
               },
-              "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj": {
-                "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj"
+              "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj": {
+                "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.ApiModels\\ParaInfo.Web.ApiModels.csproj"
               }
             }
           }
@@ -350,7 +330,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

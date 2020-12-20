@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {}
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
+    "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
         "projectName": "ParaInfo.Web.Infrastructure",
-        "projectPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\PC-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\PC12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\PC12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

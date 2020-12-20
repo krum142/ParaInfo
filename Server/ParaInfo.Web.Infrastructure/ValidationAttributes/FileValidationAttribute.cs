@@ -32,7 +32,7 @@ namespace ParaInfo.Web.Infrastructure.ValidationAttributes
                 return ValidationResult.Success;
             }
 
-            var fileContentType = this.allowedMimeFiles.Contains(file.ContentType);
+            var fileContentType = this.allowedMimeFiles.Contains(file.ContentType.ToLower());
 
             if (file.Length > 2000000)
             {
@@ -53,7 +53,7 @@ namespace ParaInfo.Web.Infrastructure.ValidationAttributes
 
             foreach (var extension in allowedTypes)
             {
-                if (file.FileName.EndsWith(extension))
+                if (file.FileName.ToLower().EndsWith(extension.ToLower()))
                 {
                     validExtension = true;
                 }

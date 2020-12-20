@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AsxM7fezNN4cpxoQOmmzYtO54UGHV2R57/CLxWdpQWfuXi6TYSC0J+/yTrS2xA2CDakHJHrilOaTIOcQtiPEDg==",
+  "dgSpecHash": "Hj9pxsvLQmNYVoTfR1UExsSbNL9oBbliSWfkBDEirFMZSrvUpg6ofEhE3+Sz0HtI/LEysdLkSaIeAOYrBDAvIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC-12\\Desktop\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\PC12\\Documents\\GitHub\\ParaInfo\\Server\\ParaInfo.Web.Infrastructure\\ParaInfo.Web.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC-12\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC-12\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC-12\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512"
+    "C:\\Users\\PC12\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC12\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC12\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
