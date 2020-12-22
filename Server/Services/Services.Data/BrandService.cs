@@ -27,7 +27,7 @@ namespace Services.Services.Data
         {
             var projection = Builders<Brand>.Projection
                 .Include(p => p.Name)
-                .Include(x => x.ImageUrl);
+                .Include(x => x.ImgUrl);
 
             return await mongoDb.GetAllOrderedAndFilteredAsync(projection,x => x.Views,count);
         }
