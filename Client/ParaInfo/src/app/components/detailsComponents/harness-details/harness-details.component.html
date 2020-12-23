@@ -1,0 +1,46 @@
+<section *ngIf="harness">
+    <article class="header">
+        <div class="details">
+            <h2>Model: {{harness.model}}</h2>
+            <img src="{{harness.imgUrl}}" alt="">
+        </div>
+        <div *ngIf="isUserLogged">
+            <button routerLink="/edit/harness/{{harness?.brand}}/{{harness?.model}}" class="edit">Edit</button>
+            <button (click)="deleteHarness(harness?.id)" class="delete">Delete</button>
+        </div>
+    </article>
+    <article class="description">
+        <h3>Description</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDescription}">
+            <p> {{harness.description}}</p>
+        </div>
+        <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'"></i></a>
+    </article>
+
+    <main>
+        <article class="table">
+            <ul class="header-table">
+                <li>Price</li>
+                <li>Size</li>
+                <li>Pilot Height</li>
+                <li>Seat Width</li>
+                <li>Seat Depth</li>
+                <li>Carabiner Height</li>
+                <li>Chest Strap Width</li>
+                <li>Harness Weight</li>
+                <li>Certification</li>
+            </ul>
+            <ul class="main-table" *ngFor="let item of harness.sizes">
+                <li>{{harness?.price || "-"}}</li>
+                <li>{{item?.size || "-"}}</li>
+                <li>{{item?.pilotHeight || "-"}}</li>
+                <li>{{item?.seatWidth || "-"}}</li>
+                <li>{{item?.seatDepth || "-"}}</li>
+                <li>{{item?.carabinerHeight || "-"}}</li>
+                <li>{{item?.chestStrapWidth || "-"}}</li>
+                <li>{{item?.harnessWeight || "-"}}</li>
+                <li>{{item?.certification || "-"}}</li>
+            </ul>
+        </article>
+    </main>
+</section>

@@ -1,0 +1,44 @@
+<section *ngIf="reserve">
+    <article class="header">
+        <div class="details">
+            <h2>Model: {{reserve.model}}</h2>
+            <img src="{{reserve.imgUrl}}" alt="">
+        </div>
+        <div *ngIf="isUserLogged">
+            <button routerLink="/edit/reserve/{{reserve?.brand}}/{{reserve?.model}}" class="edit">Edit</button>
+            <button (click)="deleteReserve(reserve?.id)" class="delete">Delete</button>
+        </div>
+    </article>
+    <article class="description">
+        <h3>Description</h3>
+        <div class="to-hide" [ngClass]="{'hide': showDescription}">
+            <p> {{reserve.description}}</p>
+        </div>
+        <a (click)="toggleDescription()"><i class="fas" [ngClass]="showDescription ? 'fa-bars' : 'fa-times'"></i></a>
+    </article>
+
+    <main>
+        <article class="table">
+            <ul class="header-table">
+                <li>Price</li>
+                <li>Size</li>
+                <li>Area</li>
+                <li>MaxTow</li>
+                <li>SrAtMax</li>
+                <li>Weight</li>
+                <li>PackingVol</li>
+                <li>Certification</li>
+            </ul>
+            <ul class="main-table" *ngFor="let item of reserve.sizes">
+                <li>{{reserve?.price || "-"}}</li>
+                <li>{{item?.size || "-"}}</li>
+                <li>{{item?.area || "-"}}</li>
+                <li>{{item?.maxTow || "-"}}</li>
+                <li>{{item?.srAtMax || "-"}}</li>
+                <li>{{item?.weight || "-"}}</li>
+                <li>{{item?.packingVol || "-"}}</li>
+                <li>{{item?.certification || "-"}}</li>
+            </ul>
+        </article>
+    </main>
+</section>

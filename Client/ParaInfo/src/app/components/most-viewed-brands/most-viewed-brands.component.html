@@ -1,0 +1,8 @@
+<section>
+    <article *ngFor="let brand of brands" routerLink="/brand/{{brand.name}}">
+        <img src="{{brand.imgUrl}}" alt="">
+        <div>
+            <h2>{{brand.name}}</h2>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,4 @@
+<app-product-header [brandName]="brandName" ></app-product-header>
+<app-brand-categories [brandName]="brandName" [categoryName]="categoryName"></app-brand-categories>
+<a *ngIf="isUserLogged" routerLink="/create/{{categoryRouteName}}/{{brandName}}">Create {{categoryName}}</a>
+<app-load-brand-products [brandName]="brandName" [categoryName]="categoryName"></app-load-brand-products>

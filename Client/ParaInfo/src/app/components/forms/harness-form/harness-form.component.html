@@ -1,0 +1,128 @@
+<section>
+    <article>
+        <form [formGroup]="createHarnessForm">
+            <div class="header">
+                <div class="item-container">
+                    <h1>Brand: {{brandName}}</h1>
+                </div>
+                <div class="item-container">
+                    <span class="span-error"
+                        *ngIf="createHarnessForm.controls.model?.errors?.modelAlreadyExists">this model Already
+                        Exists </span>
+                    <label for="model">Model</label>
+
+                    <input name="model"
+                        [ngClass]="{'input-err': createHarnessForm.controls.model.invalid && createHarnessForm.controls.model.touched}"
+                        type="text" formControlName="model" maxlength="31">
+                </div>
+                <div class="file-container">
+                    <input class="file-input" id="actual-btn-file" (change)="onFileChange($event)" type="file" hidden accept=".png, .jpg, .jpeg, .gif">
+
+                    <span class="span-error" *ngIf="createHarnessForm.controls.file?.errors?.required">Img Is
+                        Required</span>
+                    <span class="span-error" *ngIf="createHarnessForm.controls.file?.errors?.wrongFileType">Wrong
+                        Image Extension</span>
+                    <span class="span-error" *ngIf="createHarnessForm.controls.file?.errors?.wrongFileSize">Max File
+                        Size 2Mb</span>
+
+                    <span id="file-chosen">{{createHarnessForm.controls.file.value.name || "File Name" }}</span>
+                    <label class="file-label" for="actual-btn-file">Choose Img</label>
+
+                </div>
+                <div class="item-container">
+                    <label for="price">Price (Euro)</label>
+                    <input type="text" name="price"
+                        [ngClass]="{'input-err': createHarnessForm.controls.price.invalid && createHarnessForm.controls.price.touched}"
+                        formControlName="price" maxlength="21">
+                </div>
+            </div>
+            <div class="description">
+                <label for="description">Description</label>
+                <textarea name="description" rows="10 " maxlength="1000" formControlName="description"></textarea>
+            </div>
+            <div class="body" formArrayName="sizes">
+                <div class="groups">
+                    <div class="item-container">
+                        <label for="size">Size</label>
+                    </div>
+                    <div class="item-container">
+                        <label for="pilotHeight">PilotHeight</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="seatWidth">SeatWidth</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="seatDepth">SeatDepth</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="carabinerHeight">CarabinerHeight</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="chestStrapWidth">ChestStrapWidth</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="harnessWeight">HarnessWeight</label>
+                    </div>
+
+                    <div class="item-container">
+                        <label for="certification">Certification</label>
+                    </div>
+                </div>
+                <div class="groups" *ngFor="let group of sizeArray.controls; let i=index" [formGroupName]="i">
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'size').invalid}"
+                            formControlName="size">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'pilotHeight').invalid}"
+                            formControlName="pilotHeight">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'seatWidth').invalid}"
+                            formControlName="seatWidth">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'seatDepth').invalid}"
+                            formControlName="seatDepth">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'carabinerHeight').invalid}"
+                            formControlName="carabinerHeight">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'chestStrapWidth').invalid}"
+                            formControlName="chestStrapWidth">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'harnessWeight').invalid}"
+                            formControlName="harnessWeight">
+                    </div>
+
+                    <div class="item-container">
+                        <input type="text" [ngClass]="{'input-err': getControl(group,'certification').invalid}"
+                            formControlName="certification">
+                    </div>
+                    <button class="remove-button" (click)="removeSize(i)"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <button class="add-button" (click)="addSize()"><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <ng-container *ngIf="edit; else elseTemplate">
+                <button class="submit-button" (click)="updateHarness()">Update Paraglider</button>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <button class="submit-button" (click)="createHarness()">Create Paraglider</button>
+            </ng-template>
+        </form>
+    </article>
+</section>
