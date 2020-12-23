@@ -373,5 +373,5 @@ MigrationBackup/
 *.sublime-workspace
 
 # IDE - VSCode
-Client/.vscode
+*.vscode
 
