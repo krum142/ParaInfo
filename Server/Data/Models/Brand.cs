@@ -5,11 +5,16 @@ using Parainfo.Data.Common.Models;
 namespace Parainfo.Data.Models
 {
     [BsonCollection("Brands")]
-    public class Brand : BaseProduct
+    public class Brand : BaseModel
     {
         [Required]
         public string Name { get; set; }
 
+        [Required]
+        public string ImgUrl { get; set; }
+
         public string Description { get; set; }
+
+        public int Views { get; set; }
     }
 }

@@ -18,7 +18,7 @@ export class BrandFormComponent implements OnInit {
     private router: Router) {
     this.createBrandForm = this.fb.group({
       'name':['',[Validators.required]],
-      'imageUrl':['',[Validators.required]],
+      'imgUrl':['',[Validators.required]],
       'description':['',Validators.maxLength(1000)]
     })
    }

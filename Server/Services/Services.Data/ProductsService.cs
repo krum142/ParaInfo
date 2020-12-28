@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Services.Services.Data
 {
-    public class ProductsService<T> : IItemsService
+    public class ProductsService<T> : IProductsService<T>
         where T : BaseProduct
     {
         private readonly IMongoRepository<T> mongoDb;
@@ -27,33 +27,40 @@ namespace Services.Services.Data
             return await mongoDb.GetAllAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllFilteredAsync(ProjectionDefinition<T> projection)
+        public async Task<IEnumerable<T>> GetAllAsync(ProjectionDefinition<T> projection)
         {
             return await mongoDb.GetAllFilteredAsync(projection);
         }
 
-        public async Task<IEnumerable<T>> GetAllByBrandFilteredAsync(Expression<Func<T,bool>> expression, ProjectionDefinition<T> projection)
+        public async Task<IEnumerable<T>> GetAllAsync(ProjectionDefinition<T> projection, Expression<Func<T,bool>> expression)
         {
             return await mongoDb.GetAllFilteredAsync(expression, projection);
         }
+
+        public async Task<IEnumerable<T>> GetAllAsync(ProjectionDefinition<T> projection, Expression<Func<T, object>> expression, int count)
+        {
+            return await mongoDb.GetAllOrderedAndFilteredAsync(projection, expression, count);
+        }
+
         public async Task<T> GetByIdAsync(string id)
         {
             return await mongoDb.FindByIdAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllOrderedAndFilteredAsync(ProjectionDefinition<T> projection, Expression<Func<T, object>> expression, int count)
-        {
-            return await mongoDb.GetAllOrderedAndFilteredAsync(projection, expression, count);
-        }
-
-        public async Task<T> GetByExpressionAsync(Expression<Func<T,bool>> expression)
+        public async Task<T> FindOneAsync(Expression<Func<T,bool>> expression)
         {
             return await mongoDb.FindOneAsync(expression);
         }
 
+        public async Task AddViewAsync(T product)
+        {
+            product.Views++;
+            await mongoDb.ReplaceOneAsync(product);
+        }
+
         public async Task<T> CreateAsync(T model, IFormFile file)
         {
-            if (await GetByExpressionAsync(x => x.Brand == model.Brand && x.Model == model.Model) != null)
+            if (await FindOneAsync(x => x.Brand == model.Brand && x.Model == model.Model) != null)
             {
                 return null;
             }
@@ -61,21 +68,24 @@ namespace Services.Services.Data
             var url = await cloudinaryService.UploadImageAsync(file);
 
             model.ImgUrl = url.Url;
+            model.ImgPulbicId = url.PublicId;
 
             await mongoDb.InsertOneAsync(model);
             return model;
-
         }
         public async Task<T> UpdateAsync(T model, IFormFile file)
         {
             var oldProduct = await GetByIdAsync(model.Id);
 
             model.ImgUrl = oldProduct.ImgUrl;
+            model.ImgPulbicId = oldProduct.ImgPulbicId;
 
             if (file != null)
             {
                 var url = await cloudinaryService.UploadImageAsync(file);
                 model.ImgUrl = url.Url;
+                model.ImgPulbicId = url.PublicId;
+                await cloudinaryService.RemoveImageAsync(oldProduct.ImgPulbicId);
             }
             
             return await mongoDb.ReplaceOneAsync(model);
@@ -85,6 +95,7 @@ namespace Services.Services.Data
             var item = await mongoDb.FindByIdAsync(id);
             if (item != null)
             {
+                await cloudinaryService.RemoveImageAsync(item.ImgPulbicId);
                 await mongoDb.DeleteOneAsync(c => c.Id == item.Id);
                 return item;
             }

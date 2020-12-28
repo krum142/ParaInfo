@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
-using Parainfo.Data.Common.Repositories;
 using Parainfo.Data.Models;
 using ParaInfo.Web.ApiModels.Assesoar;
 using Services.Services.Data.Interfaces;
@@ -11,19 +10,17 @@ namespace ParaInfo.Web.Controllers
 {
     public class AccessoryController : ApiController
     {
-        private readonly IAccessoaryService accessoryService;
-        private IMongoRepository<Accessory> mongoDb;
+        private IProductsService<Accessory> productsService;
 
-        public AccessoryController(IAccessoaryService accessoryService,IMongoRepository<Accessory> mongoDb)
+        public AccessoryController(IProductsService<Accessory> productsService)
         {
-            this.accessoryService = accessoryService;
-            this.mongoDb = mongoDb;
+            this.productsService = productsService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Json(await mongoDb.GetAllAsync());
+            return Json(await productsService.GetAllAsync());
         } 
 
 
@@ -35,21 +32,23 @@ namespace ParaInfo.Web.Controllers
                 .Include(x => x.ImgUrl)
                 .Include(x => x.Brand);
 
-            return Json(await mongoDb.GetAllFilteredAsync(x => x.Brand == brand, projection));
+            return Json(await productsService.GetAllAsync(
+                projection,
+                x => x.Brand.ToLower() == brand.ToLower()));
         }
 
         [HttpGet("{brand}/{model}")]
         public async Task<IActionResult> Get(string brand, string model)
         {
-            var assessor = await mongoDb
+            var assessor = await productsService
                 .FindOneAsync(x =>
                     x.Model.ToLower() == model.ToLower() &&
                     x.Brand.ToLower() == brand.ToLower());
 
-            if (assessor == null) this.Json(new { });
+            if (assessor == null) return this.Json(new { });
 
-            assessor.Views++;
-            await mongoDb.ReplaceOneAsync(assessor);
+            await productsService.AddViewAsync(assessor);
+
             return this.Json(assessor);
         }
 
@@ -57,11 +56,18 @@ namespace ParaInfo.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Post([FromForm] AddAccesoarModel input)
         {
-            var result = await accessoryService.CreateAsync(input);
-            if (result == null)
+            var accessory = new Accessory()
             {
-                return Json(new { });
-            }
+                Brand = input.Brand,
+                Model = input.Model,
+                Price = input.Price,
+                Description = input.Description
+            };
+
+            var result = await productsService.CreateAsync(accessory, input.File);
+
+            if (result == null) return Json(new { });
+
             return Json(result);
         }
 
@@ -69,11 +75,19 @@ namespace ParaInfo.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Put([FromForm] UpdateAccessoarModel input)
         {
-            var result = await accessoryService.UpdateAsync(input);
-            if (result == null)
+            var accessory = new Accessory()
             {
-                return Json(new { });
-            }
+                Id = input.Id,
+                Brand = input.Brand,
+                Model = input.Model,
+                Price = input.Price,
+                Description = input.Description
+            };
+
+            var result = await productsService.UpdateAsync(accessory,input.File);
+
+            if (result == null) return Json(new { });
+
             return Json(result);
         }
 
@@ -81,7 +95,7 @@ namespace ParaInfo.Web.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            return Json(await accessoryService.DeleteAsync(id));
+            return Json(await productsService.DeleteAsync(id));
         }
     }
 }

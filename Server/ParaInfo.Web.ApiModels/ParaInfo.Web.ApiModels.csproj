@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Parainfo.Data.csproj" />
+    <ProjectReference Include="..\Parainfo.Data.Common\Parainfo.Data.Common.csproj" />
     <ProjectReference Include="..\ParaInfo.Web.Infrastructure\ParaInfo.Web.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -35,9 +35,6 @@ namespace ParaInfo.Web
             var databaseConfiguration = this.Configuration.GetSection("DatabaseConfiguration");
             services.Configure<DatabaseConfiguration>(databaseConfiguration);
 
-           
-
-
             services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
                 {
                     identity.Password.RequireDigit = false;
@@ -79,7 +76,7 @@ namespace ParaInfo.Web
                     };
                 });
 
-            
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -99,11 +96,8 @@ namespace ParaInfo.Web
             services.AddSingleton(cloudinary);
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
             services.AddTransient<IBrandService, BrandService>();
-            services.AddTransient<IParagliderService, ParagliderService>();
-            services.AddTransient<IHarnessService, HarnessService>();
-            services.AddTransient<IReserveService, ReserveService>();
-            services.AddTransient<IAccessoaryService, AccessoryService>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient(typeof(IProductsService<>), typeof(ProductsService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

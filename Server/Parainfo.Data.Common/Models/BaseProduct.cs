@@ -13,6 +13,8 @@ namespace Parainfo.Data.Common.Models
         [Required]
         public string ImgUrl { get; set; }
 
+        public string ImgPulbicId { get; set; }
+
         public decimal? Price { get; set; }
 
         public int Views { get; set; }

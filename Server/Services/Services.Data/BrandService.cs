@@ -1,7 +1,4 @@
-﻿
-
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using Parainfo.Data.Common.Repositories;
@@ -18,6 +15,7 @@ namespace Services.Services.Data
         {
             this.mongoDb = mongoDb;
         }
+
         public async Task<IEnumerable<Brand>> GetAllAsync()
         {
             return await mongoDb.GetAllAsync();
