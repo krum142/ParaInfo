@@ -67,10 +67,7 @@ namespace ParaInfo.Web.Controllers
 
             var result = await productService.CreateAsync(harness,input.File);
 
-            if (result == null)
-            {
-                return Json(new { });
-            }
+            if (result == null) return Json(new { });
 
             return Json(result);
         }
