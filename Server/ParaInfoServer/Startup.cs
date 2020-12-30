@@ -35,7 +35,7 @@ namespace ParaInfo.Web
             var databaseConfiguration = this.Configuration.GetSection("DatabaseConfiguration");
             services.Configure<DatabaseConfiguration>(databaseConfiguration);
 
-            services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
+            services.AddIdentityMongoDbProvider<ApplicationUser, ApplicationRole>(identity =>
                 {
                     identity.Password.RequireDigit = false;
                     identity.Password.RequireLowercase = false;
@@ -47,6 +47,7 @@ namespace ParaInfo.Web
                 mongo =>
                 {
                     mongo.ConnectionString = connectionString;
+                    mongo.RolesCollection = "User";
                 }
             );
 
@@ -75,8 +76,6 @@ namespace ParaInfo.Web
                         ValidateAudience = false
                     };
                 });
-
-
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

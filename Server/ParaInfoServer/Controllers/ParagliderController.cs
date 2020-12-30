@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using Parainfo.Data.Models;
+using Parainfo.Data.Models.Identity;
 using ParaInfo.Web.ApiModels.Paraglider;
 using Services.Services.Data.Interfaces;
 
@@ -10,10 +14,17 @@ namespace ParaInfo.Web.Controllers
 {
     public class ParagliderController : ApiController
     {
+        private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly IProductsService<Paraglider> productsService;
 
-        public ParagliderController(IProductsService<Paraglider> productsService)
+        public ParagliderController(
+            RoleManager<ApplicationRole> roleManager,
+            UserManager<ApplicationUser> userManager,
+            IProductsService<Paraglider> productsService)
         {
+            this.roleManager = roleManager;
+            this.userManager = userManager;
             this.productsService = productsService;
         }
 
@@ -85,6 +96,16 @@ namespace ParaInfo.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Put([FromForm] UpdateParagliderModel input)
         {
+
+            var z = this.User.Claims.FirstOrDefault(x => x.Type == "Id");
+            //var r = this.Request;
+            var user = await this.userManager.FindByIdAsync(z.Value);
+            var x = await this.userManager.IsInRoleAsync(user, "Userr");
+            //await this.roleManager.CreateAsync(new ApplicationRole("User"));
+            //await this.userManager.AddToRoleAsync(user, "User");
+            //await this.userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "User"));
+            //var user1 = await this.userManager.FindByIdAsync(z.Value);
+
             var paraglider = new Paraglider()
             {
                 Id = input.Id,
